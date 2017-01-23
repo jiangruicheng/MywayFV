@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>记录路径</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/iconfont.css" />
+		<style>
+			.mui-grid-view.mui-grid-9{background: white;}
+			.mui-grid-view.mui-grid-9 i{font-size: 14px;margin-right: 5px;}
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell{padding-bottom: 0px;}
+			body{background: url(../public/img/13.jpg);background-size: cover;}
+			.btn{position: absolute;bottom: 5%;width: 100%;}
+			.btn1{width: 60px;height: 60px;line-height: 60px;background: #FF5050;border-radius: 100%;margin: auto;text-align: center;color: white;border: 2px solid white;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">记录路径</h1>
+		</header>
+		<div class="mui-content">
+			<div>
+				<ul class="mui-table-view mui-grid-view mui-grid-9">
+					<li class="mui-table-view-cell mui-col-xs-4">
+						<p><i class="mui-icon iconfont">&#xe634;</i>距离</p>
+						<p style="color: black;margin-top: 6px;">0km</p>
+					</li>
+					<li class="mui-table-view-cell mui-col-xs-4">
+						<p><i class="mui-icon iconfont">&#xe636;</i>时间</p>
+						<p style="color: black;margin-top: 6px;">00:00:00</p>
+					</li>
+					<li class="mui-table-view-cell mui-col-xs-4">
+						<p><i class="mui-icon iconfont">&#xe660;</i>平均速度</p>
+						<p style="color: black;margin-top: 6px;">0km/h</p>
+					</li>
+				</ul>
+			</div>
+			<div class="btn">
+				<div class="btn1" onclick="openNewPage('record-road2.html')">结束</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/mui.js" ></script>
+	<script type="text/javascript" src="../js/open.js" ></script>
+</html>

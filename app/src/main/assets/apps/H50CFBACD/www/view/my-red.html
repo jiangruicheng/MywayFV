@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的红包</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/iconfont.css" />
+		<script src="../js/jquery-2.1.4.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../js/appconf.js" ></script>
+		<script type="text/javascript" src="../js/my-red.js" ></script>
+		<style>
+			body,.mui-content{background: white;}
+			.mui-bar.mui-bar-nav{ background: #d84e43;}
+			.mui-card .mui-control-content {
+				padding: 10px;
+			}
+			.mui-control-content {
+				height: 530px;
+			}
+			.mui-segmented-control .mui-control-item.mui-active{background: #d84e43;}
+			.mui-segmented-control .mui-control-item{color: black;border-left: none;line-height: 30px;border-radius: 5px;}
+			.mui-segmented-control{border: 1px solid gainsboro;border-radius: 5px;}
+			.bbs-pulish-img img{max-width: 55px;height: 55px;border-radius: 100%;}
+			.bbs-pulish-img p{color: #000000;}
+			.mui-table-view .mui-media-object{max-height: 45px;width: 45px;border-radius: 100%;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">我的红包</h1>
+		</header>
+		<div class="mui-content">
+			<div style="padding: 10px 40px;background: white;border-bottom: 1px solid gainsboro;">
+				<div id="segmentedControl" class="mui-segmented-control">
+					<a class="mui-control-item mui-active" href="#item1">
+				收到的
+			</a>
+					<a class="mui-control-item" href="#item2">
+				发出的
+			</a>
+				</div>
+			</div>
+			<div>
+				<div id="item1" class="mui-control-content mui-active">
+					<div id="scroll" class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									<div class="bbs-pulish-img mui-text-center"> 
+										<img src="../public/img/1.jpg"  class="userspic"/>
+										<p style="line-height: 44px;" ><span class="usersni"></span>共收到</p>
+										<p style="font-size: 20px;line-height: 44px;"><span id="shou">123</span>个<span style="margin-left: 20px;" ><span id="shoumoney">4554</span>金币</span></p>
+									</div>
+								</li>
+							</ul>
+							<div class="shoudao"></div>
+							<!--<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<img class="mui-media-object mui-pull-left" src="../public/img/1.jpg" />
+									<div class="mui-media-body">
+										<span style="line-height: 25px;">沉着的心</span><span style="float: right;line-height: 45px;">80金币</span>
+										<p>2016-08-27</p>
+									</div>
+								</li>
+							</ul>
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<img class="mui-media-object mui-pull-left" src="../public/img/4.jpg" />
+									<div class="mui-media-body">
+										<span style="line-height: 25px;">沉着的心</span><span style="float: right;line-height: 45px;">80金币</span>
+										<p>2016-08-27</p>
+									</div>
+								</li>
+							</ul>
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<img class="mui-media-object mui-pull-left" src="../public/img/5.jpg" />
+									<div class="mui-media-body">
+										<span style="line-height: 25px;">沉着的心</span><span style="float: right;line-height: 45px;">80金币</span>
+										<p>2016-08-27</p>
+									</div>
+								</li>
+							</ul>
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<img class="mui-media-object mui-pull-left" src="../public/img/1.jpg" />
+									<div class="mui-media-body">
+										<span style="line-height: 25px;">沉着的心</span><span style="float: right;line-height: 45px;">80金币</span>
+										<p>2016-08-27</p>
+									</div>
+								</li>
+							</ul>
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<img class="mui-media-object mui-pull-left" src="../public/img/4.jpg" />
+									<div class="mui-media-body">
+										<span style="line-height: 25px;">沉着的心</span><span style="float: right;line-height: 45px;">80金币</span>
+										<p>2016-08-27</p>
+									</div>
+								</li>
+							</ul>-->
+						</div>
+					</div>
+				</div>
+				<div id="item2" class="mui-control-content">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<div class="bbs-pulish-img mui-text-center">
+								<img src="../public/img/1.jpg"  class="userspic"/>
+								<p style="line-height: 44px;"><span class="usersni"></span>共发出</p>
+								<p style="font-size: 20px;line-height: 44px;"><span id="fachu"></span>个<span style="margin-left: 20px;"><span id="famoney">11</span>金币</span></p>
+							</div>
+						</li>
+					</ul>
+					<div class="fa"></div>
+					<!--<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							拼手气抢红包<span class="mui-pull-right">80金币</span>
+							<p>2016-08-27<span class="mui-pull-right">8/8个</span></p>
+						</li>
+					</ul>
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							拼手气抢红包<span class="mui-pull-right">80金币</span>
+							<p>2016-08-27<span class="mui-pull-right">8/8个</span></p>
+						</li>
+					</ul>
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							拼手气抢红包<span class="mui-pull-right">80金币</span>
+							<p>2016-08-27<span class="mui-pull-right">8/8个</span></p>
+						</li>
+					</ul>
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							拼手气抢红包<span class="mui-pull-right">80金币</span>
+							<p>2016-08-27<span class="mui-pull-right">8/8个</span></p>
+						</li>
+					</ul>
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							拼手气抢红包<span class="mui-pull-right">80金币</span>
+							<p>2016-08-27<span class="mui-pull-right">8/8个</span></p>
+						</li>
+					</ul>-->
+				</div>
+			</div>
+			
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script>
+			mui.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+			(function($) {
+				$('#scroll').scroll({
+					indicators: true //是否显示滚动条
+				});
+				var segmentedControl = document.getElementById('segmentedControl');
+				$('.mui-input-group').on('change', 'input', function() {
+					if (this.checked) {
+						var styleEl = document.querySelector('input[name="style"]:checked');
+						var colorEl = document.querySelector('input[name="color"]:checked');
+						if (styleEl && colorEl) {
+							var style = styleEl.value;
+							var color = colorEl.value;
+							segmentedControl.className = 'mui-segmented-control' + (style ? (' mui-segmented-control-' + style) : '') + ' mui-segmented-control-' + color;
+						}
+					}
+				});
+			})(mui);
+		</script>
+
+	</body>
+
+</html>

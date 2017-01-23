@@ -1,0 +1,19 @@
+/*内容*/
+.frien_img img{border-radius: 100%;width: 70px;}
+.mui-input-row label{width: 25%;}
+.mui-input-row label~input{width: 75%;}			
+.mui-radio input[type=radio] {right: initial;top: 8px;width: 20px;height: 20px;}
+.mui-radio label {padding-right: 20px;}		
+label{width: 25%;display: inline-block;}	
+/*单选框*/
+.mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before{font-size: 18px;}
+.mui-checkbox input[type=checkbox]:checked:before, .mui-radio input[type=radio]:checked:before{color: #0062CC;}
+
+.pers_abo{padding: 11% 0;background: white;text-align: center;}   	
+.tongz{padding: 11px 15px;background: white;}
+.tongz p{color: black;} 
+.home_top{width: 25%;}
+.frien_bq{width: 75%;}
+.gray{line-height: 20px;margin-top: 5px;}
+.logo img{width: 15%;}
+.logo span{margin-top: 10px;}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8">
+	<title>ECharts</title>
+	<link rel="stylesheet" href="../css/main.css" />
+	<link rel="stylesheet" href="../libs/mui/mui.css" />
+	<link rel="stylesheet" href="../libs/iconfont/fonts/iconfont.css" />
+	<script type="text/javascript" src="../js/jquery-2.1.4.min.js" ></script>
+	<script>
+		//宽度自适应	
+		$(document).ready(function(){	
+		$(".main").css({ "color": "black", "width": (document.documentElement.clientWidth-20)+"px" });	
+		})
+	</script>
+	<style>
+		.mui-bar-nav{box-shadow:none;}
+		body,.mui-content{background: url(../public/img/70.png);}
+		.mui-bar.mui-bar-nav{background: #2E3E6E;}
+		.bbs-pulish-img{margin-top: 20px;}
+		.bk{
+			background: url(../public/img/68.png);
+			background-size: 100% 100%;
+			padding: 6px 16px;
+			color: #C0C0C0;
+		}
+		.my{position: absolute;bottom: 0px;right: 4px;left: 4px;}
+		.mui-table-view-cell{width: 48.2%;}
+		.mui-table-view.mui-grid-view .mui-table-view-cell{background: white;margin: 3px;}
+		.mui-grid-view.mui-grid-9{background: none;border-top: none;border-left: none;}
+		.my p{font-size: 12px;color: #000000;}
+		.my i{color: #B36471;font-size: 28px;}
+		.mui-grid-view.mui-grid-9 .mui-table-view-cell{padding: 2px 0;}
+		.my1{max-width: 45px;height: 45px;position: absolute;bottom: 8%;right: 44%;}
+	</style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">车辆</h1>
+		<a class="mui-pull-right" onclick="openNewPage('car-admin.html')">
+			<i class="mui-icon iconfont">&#xe622;</i>
+		</a>
+	</header>
+	<div class="mui-content">
+		<div class="bbs-pulish-img mui-text-center">
+			<span class="bk">L6457875</span>
+			<div id="main" class="main" style="height:450px;position: absolute;bottom: 3%;right: 5%;left: 5%;"></div>
+		</div>
+		<div class="my" style="z-index: 10;display: block;">
+			<ul class="mui-table-view mui-grid-view mui-grid-9">
+				<li class="mui-table-view-cell  mui-pull-left">
+					<i class="mui-icon iconfont">&#xe63e;</i>
+					<p >已连接</p>
+				</li>
+				<li class="mui-table-view-cell mui-pull-right" onclick="openNewPage('car-state.html')">
+					<i class="mui-icon iconfont">&#xe640;</i>
+					<p>车身状态</p>
+				</li>
+				<li class="mui-table-view-cell mui-pull-left">
+					<i class="mui-icon iconfont">&#xe641;</i>
+					<p>锁车</p>
+				</li>
+				<li class="mui-table-view-cell  mui-pull-right">
+					<i class="mui-icon iconfont">&#xe63f;</i>
+					<p>模式切换</p>
+				</li>
+			</ul>
+		</div>
+		<div class="my1" style="z-index: 50;">
+			<img src="../public/img/69.png" />
+		</div>
+	<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+	</div>
+	<!-- ECharts单文件引入 -->
+	<script src="../js/echarts.min.js"></script>
+	<script type="text/javascript" src="../js/mui.js" ></script>
+	<script type="text/javascript" src="../js/jump.js" ></script>
+	<script type="text/javascript" src="../js/open.js" ></script>
+	<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+		var myChart = echarts.init(document.getElementById('main'));
+		option = {
+    tooltip : {
+        formatter: "{a} <br/>{c} {b}"
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            restore: {show: true},
+            saveAsImage: {show: true}
+        }
+    },
+    series : [
+        {
+            name: '速度',
+            type: 'gauge',
+            z: 1,
+            min: 0,
+            max: 40,
+            splitNumber: 8,
+            center: ['50%', '55%'],
+            radius: '70%',
+            axisLine: {            // 坐标轴线
+                lineStyle: {       // 属性lineStyle控制线条样式
+                    width:0
+                }
+            },
+            axisTick: {            // 坐标轴小标记
+                length: 15, 
+                splitNumber: 8,// 属性length控制线长
+                lineStyle: {       // 属性lineStyle控制线条样式
+                    color: 'auto'
+                }
+            },
+            splitLine: {           // 分隔线
+                length: 15,         // 属性length控制线长
+                lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                    color: 'auto'
+                }
+            },
+            title : {
+                textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                    fontWeight: 'bolder',
+                    fontSize: 15,
+                    fontStyle: 'Arial',
+                    color:'withe'
+                }
+            },
+            detail : {
+                textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                    fontWeight: 'bolder'
+                }
+            },
+            data:[{value: 31, name: '时速(km/h)'}]
+        },
+        {
+            name: '里程',
+            type: 'gauge',
+            center: ['20%', '20%'],    // 默认全局居中
+            radius: '40%',
+            min:0,
+            max:50,
+            z:3,
+            splitNumber: 10,
+            axisLine: {            // 坐标轴线
+                lineStyle: {       // 属性lineStyle控制线条样式
+                    width: 0
+                }
+            },
+            axisTick: {            // 坐标轴小标记
+                length:8,        // 属性length控制线长
+                lineStyle: {       // 属性lineStyle控制线条样式
+                    color: 'auto'
+                }
+            },
+            splitLine: {           // 分隔线
+                length:8,         // 属性length控制线长
+                lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                    color: 'auto'
+                }
+            },
+            pointer: {
+                width:5
+            },
+            title: {
+                offsetCenter: [0, '-20%'],
+                // x, y，单位px
+                textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                    fontWeight: 'bolder',
+                    fontSize: 12,
+                    fontStyle: 'Arial',
+                    color:'withe'
+                }
+            },
+            detail: {
+                textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                    fontWeight: 'bolder',
+                }
+            },
+            data:[{value: 39, name: '总里程(km)'}]
+        },
+        {
+            name: '里程',
+            type: 'gauge',
+            center: ['80%', '20%'],    // 默认全局居中
+           
+            radius: '40%',
+            min:0,
+            max:100,
+            axisLine: {            // 坐标轴线
+                lineStyle: {       // 属性lineStyle控制线条样式
+                    width: 0
+                }
+            },
+            axisTick: {            // 坐标轴小标记
+                length:8,        // 属性length控制线长
+                lineStyle: {       // 属性lineStyle控制线条样式
+                    color: 'auto'
+                }
+            },
+            splitLine: {           // 分隔线
+                length:8,         // 属性length控制线长
+                lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                    color: 'auto'
+                }
+            },
+            pointer: {
+                width:5
+            },
+            title: {
+                offsetCenter: [0, '-20%'],       // x, y，单位px
+                textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                    fontWeight: 'bolder',
+                    fontSize: 12,
+                    fontStyle: 'Arial',
+                    color:'withe'
+                }
+            },
+            detail: {
+                textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                    fontWeight: 'bolder',
+                }
+            },
+            data:[{value: 78, name: '电量(%)'}]
+        }
+    ]
+};
+
+		// 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+	</script>
+</body>

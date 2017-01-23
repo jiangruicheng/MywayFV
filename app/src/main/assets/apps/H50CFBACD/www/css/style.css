@@ -1,0 +1,49 @@
+/*首页-独家*/
+/*搜索*/
+.search-head {position: fixed;width: 70%;top: 2px;left: 50%;margin-left: -30%;}
+input[type=search] {border:1px solid #aaa;background-color:white;}
+/*轮播*/
+.mui-slider-indicator{text-align: right;}
+.mui-slider-indicator{width: 97%;}
+.mui-slider-indicator .mui-active.mui-indicator {background: #1c71f0;}			
+.mui-slider-indicator .mui-indicator{background: white;width: 8px;height: 8px;margin: 1px 0;}
+.mui-slider-loop img{height: 175px;overflow: hidden;}
+/*头部导航*/			
+.mui-slider{background: white;}
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item{line-height: 44px;font-size: 17px;color: black;}
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{color:#1c71f0;padding: 0 15px;}
+
+/*公用样式*/	
+label{width: 25%;display: inline-block;}	    	  		    	 
+input[type=text]{width: 70%;margin-bottom: 0px;border: none;}
+.po{padding: 0 15px;}
+.home_top{width: 35%;}
+.frien_bq{width: 65%;}
+.frien_img img{width: 95px;}
+.frien_bq{line-height: 25px;font-size: 14px;}
+.frien_bq p{font-size: 14px;}
+textarea{height: 200px;border: none;margin-bottom: 0px;} 
+/*勾选*/
+.zbx-Radio{float: left;}
+.zbx-Radio label {padding: 0px 30px;}
+.zbx-Radio input {top: -3px !important;left: 0 !important;}	
+.mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before{font-size: 25px;}
+/*底部按钮*/
+.navtab {text-align: center;background: #1c71f0;}
+.navtab span{color: white;line-height: 50px;}
+/*物流信息*/
+.check{padding: 11px 15px;background: white;}
+.check h4{font-weight: 400;font-size: 16px;}
+.check_a{margin-top: 11px;padding: 11px 0;border-top: 1px solid #eee;display: inline-block;}    	    	  
+.check_a i{width: 20px;height: 20px;border-radius: 100px;background: #aaa;display: block;margin: auto;}
+#dian{width: 22px;height: 22px;border-style: groove;border-radius: 100px;background: #25AE5F;display: block;margin: auto;}
+.check_a map{height: 75px;border: 1px solid #aaa;display: inline-block;margin-bottom: -5px;}
+.logisit{padding: 3px 0;color: #aaa;height: 100px;}
+.logisit.mui-active{padding: 3px 0;color: #25AE5F;height: 100px;}
+/*个人-头部*/
+.heade_top img{overflow: hidden;position: relative;}
+.topimg{top: 5%;left: 40%;position: absolute;}
+.topimg img{width: 70px;height: 70px;border-radius: 100%;}
+.topimg span{display: block;color: white;}
+/*个人-内容*/
+.icon_list i{display: inline-block;font-size: 1.2em;}

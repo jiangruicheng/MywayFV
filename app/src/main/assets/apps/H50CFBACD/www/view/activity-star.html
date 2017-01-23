@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>发起活动</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/fonts/iconfont.css" />
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css" />
+		<script src="../js/jquery-2.1.4.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../js/appconf.js" ></script>
+		<script type="text/javascript" src="../js/picshang.js" ></script>
+		<script type="text/javascript" src="../js/activity-star.js" ></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=B58QVrfpCwUPxY8h11UoWADPoUe2aPyY"></script>
+		<style>
+			.kong{margin-top: 3px;} 
+			.mui-btn-blue{background-color:#404040;border: #404040;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">发起活动</h1>
+			<a class="mui-pull-right">
+				<h5 style="line-height: 33px;" id="fabu">发布</h5>
+			</a>
+		</header>
+			<div id="allmap"></div>
+		<div class="mui-content">
+			<div class="m5">
+				<ul class="mui-table-view">
+				<div class="pulish-img"><p id="showimg"></p></div>
+					<li class="mui-table-view-cell" style="width:50%;margin: auto;">
+						<img class="userimg" id="userpic" src="../public/img/4.jpeg" cname="userpic"/>
+					</li>
+				</ul>
+				<ul class="mui-table-view kong">
+					<li class="mui-table-view-cell">
+						<input placeholder="请输入活动名称" style="width: 100%;border: none;"  id="activityname"/>
+					</li>
+				</ul>
+				<ul class="mui-table-view kong">
+					<li class="mui-table-view-cell">
+						<input placeholder="请输入活动地址" style="width: 100%;border: none;" id="activityaddr"/>
+					</li>
+				</ul>
+				<!--<ul class="mui-table-view kong" onclick="openNewPage('activity-place.html')">
+					<li class="mui-table-view-cell" style="line-height: 40px;">
+						<input placeholder="请定位活动地点" style="width: 80%;border: none;" id="activityaddr">
+						<i class="mui-icon iconfont mui-pull-right" style="color: #3EA3FF;margin-top: 9px;font-size: 20px;">&#xe617;</i>
+						<input type="text" id="suggestId" size="20" value="" style="width:150px;display: none;" /〉
+					</li>
+				</ul>-->
+					<div id="searchResultPanel" style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;"></div>
+				<ul class="mui-table-view kong aa" >
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" id='demo3' data-options='{"value":"2015-10-10 10:10","beginYear":2010,"endYear":2080}'>
+							<span>开始时间</span>
+							<input placeholder="" style="width: 70%;border: none;text-align: right;" class="ui-alert result" id="kstime"/>
+						</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view aaa">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" id='demo3' data-options='{"value":"2015-10-10 10:10","beginYear":2010,"endYear":2080}'>
+							<span>结束时间</span>
+							<input placeholder="" style="width: 70%;border: none;text-align: right;" class="ui-alert result" id="overtime" />
+						</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view kong">
+					<li class="mui-table-view-cell">
+						<textarea  id = "activityress"cols="" rows="5" placeholder="请输入活动内容" style="padding: 10px 0;border: none;"></textarea>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script type="text/javascript" src="../js/open.js" ></script>
+	<script src="../js/mui.picker.min.js"></script>
+	<script>
+		(function($) {
+			$.init();
+			var result = $('.result')[0];
+			var btns = $('.aa');
+			btns.each(function(i, btn) {
+				btn.addEventListener('tap', function() {
+					var optionsJson = this.getAttribute('data-options') || '{}';
+					var options = JSON.parse(optionsJson);
+					var id = this.getAttribute('aa');
+					var picker = new $.DtPicker(options);
+					picker.show(function(rs) {
+						result.value = rs.text;
+						picker.dispose();
+					});
+				}, false);
+			});
+			var result1 = $('.result')[1];
+			var btns = $('.aaa');
+			btns.each(function(i, btn) {
+				btn.addEventListener('tap', function() {
+					var optionsJson = this.getAttribute('data-options') || '{}';
+					var options = JSON.parse(optionsJson);
+					var id = this.getAttribute('aaa');
+					var picker = new $.DtPicker(options);
+					picker.show(function(rs) {
+						result1.value = rs.text;
+						picker.dispose();
+					});
+				}, false);
+			});
+		})(mui);
+	</script>
+	
+	<script type="text/javascript">
+	// 百度地图API功能
+	function G(id) {
+		return document.getElementById(id);
+	}
+
+	var map = new BMap.Map("l-map");
+	map.centerAndZoom("北京",12);                   // 初始化地图,设置城市和地图级别。
+
+	var ac = new BMap.Autocomplete(    //建立一个自动完成的对象
+		{"input" : "suggestId"
+		,"location" : map
+	});
+
+	ac.addEventListener("onhighlight", function(e) {  //鼠标放在下拉列表上的事件
+	var str = "";
+		var _value = e.fromitem.value;
+		var value = "";
+		if (e.fromitem.index > -1) {
+			value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+		}    
+		str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
+		
+		value = "";
+		if (e.toitem.index > -1) {
+			_value = e.toitem.value;
+			value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+		}    
+		str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
+		G("searchResultPanel").innerHTML = str;
+	});
+
+	var myValue;
+	ac.addEventListener("onconfirm", function(e) {    //鼠标点击下拉列表后的事件
+	var _value = e.item.value;
+		myValue = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+		G("searchResultPanel").innerHTML ="onconfirm<br />index = " + e.item.index + "<br />myValue = " + myValue;
+		
+		setPlace();
+	});
+
+	function setPlace(){
+		map.clearOverlays();    //清除地图上所有覆盖物
+		function myFun(){
+			var pp = local.getResults().getPoi(0).point;    //获取第一个智能搜索的结果
+			map.centerAndZoom(pp, 18);
+			map.addOverlay(new BMap.Marker(pp));    //添加标注
+		}
+		var local = new BMap.LocalSearch(map, { //智能搜索
+		  onSearchComplete: myFun
+		});
+		local.search(myValue);
+	}
+</script>
+
+</html>

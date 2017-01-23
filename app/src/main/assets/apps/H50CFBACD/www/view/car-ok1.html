@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>车辆认证</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/fonts/iconfont.css" />
+		<script src="../js/jquery-2.1.4.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../js/appconf.js" ></script>
+		<script type="text/javascript" src="../js/carok.js" ></script>
+		<style>
+			.mui-content{margin-top: 20px;}
+			.btn{padding-top: 30px;width: 90%;margin: auto;}
+			.btn button{padding: 6px;color: white;background: #DC4949;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">车主认证</h1>
+		</header>
+		<div class="mui-content">
+			<div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class=" mui-input-row">
+							<span>系列号：</span>
+							<input  style="width: 60%;border: none;" placeholder="请输入序列号" id="serialnumber"/>
+							<i class="mui-icon iconfont mui-pull-right" onclick="carok()" style="color: gray;">&#xe63d;</i>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="btn">
+				<button type="button" class="mui-btn mui-btn-block" id="subtn" >提交</button>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/mui.js" ></script>
+	<script type="text/javascript" src="../js/open.js" ></script>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>今日路径</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/iconfont.css" />
+		<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=eYf9sA6yVTFHlh9ytU4a0EYY"></script>
+		<script type="text/javascript" src="../js/appconf.js" ></script>
+		<style>
+			body{}
+			.mui-bar-popover{
+				width: 40%;
+				height: 170px;
+				list-style: none;
+				text-align: center;
+			}
+			.map{width:100%;height: 640px;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">今日路径</h1>
+			<a class="mui-pull-right" href="#room-share">
+				<i class="mui-icon iconfont">&#xe666;</i>
+			</a>
+		</header>
+		<div id="room-share" class="mui-popover" style="height: 0 !important;">	
+			<div class="footer mui-bar-footer" >
+					<ul class="mui-table-view mui-grid-view mui-grid-9">
+			            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#" id ="weixin">
+			                    <span class="mui-icon iconfont mui-lvs">&#xe609;</span>
+			                    <div class="mui-media-body">微信</div></a></li>
+			            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#" id="qq">
+			                    <span class="mui-icon iconfont mui-blus">&#xe608;</span>
+			                    <div class="mui-media-body">QQ</div></a></li>
+			            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#" id="wxsline">
+			                    <span class="mui-icon iconfont mui-lvs">&#xe60a;</span>
+			                    <div class="mui-media-body">朋友圈</div></a></li>
+			            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#" id="kone">
+			                    <span class="mui-icon iconfont" style="color: #FFAD19;">&#xe604;</span>
+			                    <div class="mui-media-body">QQ空间</div></a></li>
+     			   </ul> 
+			</div>
+		</div>
+		<div class="mui-content" >
+			<div class="map" id="allmap"></div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/open.js" ></script>
+	<script type="text/javascript" src="../libs/mui/mui.js"></script>
+	<script type="text/javascript" src="../libs/jquery/jquery.js"></script>
+	<script type="text/javascript" src="../js/jquery-2.1.4.min.js" ></script>
+	<script type="text/javascript" src="../js/today-road.js" ></script>
+</html>

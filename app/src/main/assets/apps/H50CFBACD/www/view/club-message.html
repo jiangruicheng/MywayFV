@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>俱乐部信息</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/fonts/iconfont.css" />
+		<script src="../js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="../js/appconf.js" ></script>
+        <script type="text/javascript" src="../js/clubmessage.js" ></script>
+		<style>
+			.mui-bar-nav{box-shadow:none;}
+			.bbs-pulish-img{background: url(../public/img/6.jpg);background-size: cover;}
+			.bbs-pulish-img img{max-width: 55px;height: 55px;border-radius: 100%;margin-top: 20px;border: 2px solid white;}
+			.m5 img{max-width: 40px;height: 40px;border-radius: 100%;}
+			.btn{width: 90%;margin: auto;}
+			.btn button{padding: 6px;color: white;background: #DC4949;margin-top: 40px;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">俱乐部信息</h1>
+			<!--<a class="mui-pull-right" onclick="openNewPage('club-bj.html')">
+				<h5 style="line-height: 33px;">编辑</h5>
+			</a>-->
+			<div id="bianji">
+				<!--<a class="mui-pull-right" onclick=clubbj("'+cludid+'")>
+				<h5 style="line-height: 33px;">编辑</h5></a>-->
+			</div>
+			
+		</header>
+		<div class="mui-content">
+			<div>
+				<div class="bbs-pulish-img mui-text-center" id="clubxq">
+					<img src="../public/img/40.jpg" />
+					<p class="white" style="margin-top: 10px;margin-bottom: 5px;" id="clubname"></p>
+					<p class="white font-12" style="padding-bottom: 20px;"><i class="mui-icon iconfont" style="font-size: 12px;">&#xe616;</i><span id="clubaddr">广东省 深圳市<span></span></span></p>
+				</div>
+			</div>
+			<div class="m5">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<span>成员</span><span class="mui-pull-right gray"><span id="count">123</span>人</span>
+						<a class="mui-navigate-right"  id="piclist">
+							<!--<img src="../public/img/1.jpg" />
+							<img src="../public/img/1.png" />
+							<img src="../public/img/4.jpg" />
+							<img src="../public/img/1.jpg" />
+							<img src="../public/img/1.png" />
+							<img src="../public/img/4.jpg" />-->
+						</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-input-row">
+						<span>俱乐部简介</span>
+						<textarea id = "address" cols="" rows="" placeholder="各路车友一起high！" style="padding: 10px 0px;border: none;"></textarea>
+					</li>
+				</ul>
+			</div>
+			<div class="btn">
+			
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/mui.js" ></script>
+	<script type="text/javascript" src="../js/open.js" ></script>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>车手等级</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/iconfont.css" />
+		<script src="../js/jquery-2.1.4.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../js/appconf.js" ></script>
+		<script type="text/javascript" src="../js/driver-grade.js" ></script>
+		<style>
+			.mui-table-view .mui-media-object{max-width: 55px;height: 55px;border-radius: 100%;}
+			.head span{color: #ff6700;}
+			.m5 .mui-table-view-cell span{font-size: 14px;}
+			.my .mui-table-view{background: gainsboro;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">车手等级</h1>
+		</header>
+		<div class="mui-content">
+			<div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media" id="userlogo">
+						<img class="mui-media-object mui-pull-left" src="../public/img/1.jpg" onclick="openNewPage('my-infor.html')" />
+						<div class="mui-media-body" style="padding-left: 5px;">
+							<span style="line-height: 33px;" id="username">沉着的心</span>
+							<p style="margin-top: -5px;color: #000000;" >Lv<span id="dj"></span></p>
+							<p style="margin-top: -10px;" ><img src="../public/img/2.jpg" style="width: 60%;" /></p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="m5">
+				<ul class="mui-table-view mui-grid-view head">
+					<li class="mui-table-view-cell mui-col-xs-3 ">
+						<span>排名</span>
+					</li>
+					<li class="mui-table-view-cell mui-col-xs-3 ">
+						<span>等级名称</span>
+					</li>
+					<li class="mui-table-view-cell mui-col-xs-3 ">
+						<span>升级所需积分</span>
+					</li>
+					<li class="mui-table-view-cell mui-col-xs-3 ">
+						<span>总积分</span>
+					</li>
+				</ul>
+				<div class="my">
+					<ul class="mui-table-view mui-grid-view">
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>0</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>初级车手</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>0</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>0</span>
+						</li>
+					</ul>
+					<ul class="mui-table-view mui-grid-view">
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>1</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>普通车手</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>80</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>80</span>
+						</li>
+					</ul>
+					<ul class="mui-table-view mui-grid-view">
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>2</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>资深车手</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>160</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>240</span>
+						</li>
+					</ul>
+					<ul class="mui-table-view mui-grid-view">
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>3</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>赛车手E级</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>240</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>480</span>
+						</li>
+					</ul>
+					<ul class="mui-table-view mui-grid-view">
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>4</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>资深车手</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>320</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>800</span>
+						</li>
+					</ul>
+					<ul class="mui-table-view mui-grid-view">
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>5</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>资深车手</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>160</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>240</span>
+						</li>
+					</ul>
+					<ul class="mui-table-view mui-grid-view">
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>6</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>资深车手</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>160</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>240</span>
+						</li>
+					</ul>
+					<ul class="mui-table-view mui-grid-view">
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>7</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>资深车手</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>160</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>240</span>
+						</li>
+					</ul>
+					<ul class="mui-table-view mui-grid-view">
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>8</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>资深车手</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>160</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>240</span>
+						</li>
+					</ul>
+					<ul class="mui-table-view mui-grid-view">
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>9</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>资深车手</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>160</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>240</span>
+						</li>
+					</ul>
+					<ul class="mui-table-view mui-grid-view">
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>10</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>资深车手</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>160</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>240</span>
+						</li>
+					</ul>
+					<ul class="mui-table-view mui-grid-view">
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>11</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>资深车手</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>160</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>240</span>
+						</li>
+					</ul>
+					<ul class="mui-table-view mui-grid-view">
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>12</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>资深车手</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>160</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>240</span>
+						</li>
+					</ul>
+					<ul class="mui-table-view mui-grid-view">
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>13</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>资深车手</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>160</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>240</span>
+						</li>
+					</ul>
+					<ul class="mui-table-view mui-grid-view">
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>14</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>资深车手</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>160</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>240</span>
+						</li>
+					</ul>
+					<ul class="mui-table-view mui-grid-view">
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>15</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>资深车手</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>160</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>240</span>
+						</li>
+					</ul>
+					<ul class="mui-table-view mui-grid-view">
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>16</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>资深车手</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>160</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>240</span>
+						</li>
+					</ul>
+					<ul class="mui-table-view mui-grid-view">
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>17</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>资深车手</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>160</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>240</span>
+						</li>
+					</ul>
+					<ul class="mui-table-view mui-grid-view">
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>18</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>资深车手</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>160</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>240</span>
+						</li>
+					</ul>
+					<ul class="mui-table-view mui-grid-view">
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>19</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>资深车手</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>160</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>240</span>
+						</li>
+					</ul>
+					<ul class="mui-table-view mui-grid-view">
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>20</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>资深车手</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>160</span>
+						</li>
+						<li class="mui-table-view-cell mui-col-xs-3 ">
+							<span>240</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>	
+	</body>
+	<script type="text/javascript" src="../js/mui.js" ></script>
+	<script type="text/javascript" src="../js/open.js" ></script>
+</html>

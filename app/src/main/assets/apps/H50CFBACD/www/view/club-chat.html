@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>聊天</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/fonts/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/chat.css">
+		<link rel="stylesheet" type="text/css" href="../css/popup.css" />
+		<link href="../css/mui.imageviewer.css" rel="stylesheet" />
+		<script type="text/javascript" src="../js/appconf.js" ></script>
+		<script type="text/javascript" src="../js/picshang.js"></script>
+        <script type="text/javascript" src="../js/club-chat.js" ></script>
+        <style>
+			.mui-bar.mui-bar-nav .mui-action-back,.mui-bar-nav h1,.mui-bar-nav h5{ color: white;}
+			.frien_img img{width: 45px;height: 45px;border-radius: 100%;}
+			.alert{height:180px;background-color: white;padding: 20px 0px;}
+			.dis{display:none;}
+			.nav-bar-footer{bottom: 0;position: fixed;right: 0px;left: 0px;}
+			.yj{
+			    padding:10px;
+			    -moz-border-radius: 15px; 
+			    -webkit-border-radius: 15px; 
+			    border-radius:15px;           
+				}
+			.nav-bar-footer{background: white;}	
+			.alert img{max-width: 45px;height: 45px;border-radius: 5px;}
+			.chat-ta-hear div:nth-child(2), .chat-me-hear div:nth-child(2){max-width: 100%;}
+			.me:after {
+			  border-left-color:#FA9D3B;
+			}
+			.bbs-pulish-img p{color: #DDBC84;font-size: 12px;}
+			
+			.home_top{float: left;}
+			.frien_img{
+				width: 45px;
+				height: 45px;
+				border-radius: 100%;
+			}
+			.time{
+				text-align: center;
+				color: gray;
+				background-color: lightgray;
+				border-radius: 8px;
+				width: 30%;
+				padding: 0px;
+				margin: 0px auto;
+			}
+			.imgme{
+				float: right;
+			}
+			.imgher{
+				float: left;
+			}
+			.mui-table-view{
+				min-width: 196px;
+				
+			}
+			#msg-list{
+				padding-top: 54px;
+				padding-bottom: 60px;
+			}
+			.mui-table-view-cell{
+				border: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="name"></h1>
+			<div id = "clubnx" >
+			
+			</div>
+			<a class="mui-pull-right" style="display: none;">
+		    	<h5 style="line-height: 33px;" id="sendred">发红包</h5>
+		    </a>
+		</header>
+		<nav class="nav-bar nav-bar-footer" style="z-index: 10;">
+			<div style="margin-top: 5px;display: block;">
+				<div style="float: left;margin: 6px 0 0 10px;">
+					<i class="mui-icon iconfont plus" style="font-size: 24px;">&#xe627;</i>
+				</div>
+				<div style="float: left;width: 68%;margin: 0 10px;">
+					<input id="msg-text" type="text" style="width: 100%;padding: 5px;border: 1px solid gray;height: 32px;" />
+				</div>
+				<div style="float: left;margin-bottom: 5px;">
+					<button type="button" id="send">发送</button>
+				</div>
+			</div>
+	     	<div class="alert dis">
+				<div style="width: auto;position:absolute;top: 60px;left: 20px;" id="sendimg">
+				   	<img src="../public/img/38.jpg" />
+				     <p style="margin-left: 10px;">图片</p>
+				     <!--<video width="800" height="" controls="controls" >
+				     	<source src="myvideo.mp4" type="video/mp4"></source>
+				     	<source src="myvideo.ogv" type="video/ogg"></source>
+				     	<source src="myvideo.webm" type="video/webm"></source>
+				     	<object width="" height="" type="application/x-shockwave-flash" data="myvideo.swf">
+				     		<param name="movie" value="myvideo.swf" />
+				     		<param name="flashvars" value="autostart=true&amp;file=myvideo.swf" />
+				     	</object>
+				     	当前浏览器不支持 video直接播放，点击这里下载视频： <a href="myvideo.webm">下载视频</a>
+				     </video>-->
+				     <input type="file" style="display: none;" id="sendpic">
+				</div>
+				<!--<div style="display: block;width: auto;position: absolute;top: 60px;left: 90px;">
+				   	<img src="../public/img/41.jpg"  id="file"/>
+				    <p style="text-align: center;">视频</p> 
+				</div>-->
+				<div style="display: block;width: auto;position: absolute;top: 60px;left: 90px;">
+				   <img src="../public/img/41.jpg"  class="videos uploadvideo" />
+				   <p style="text-align: center;">视频</p>
+				   <form id="form" style="margin-left: 2%; text-align: center;">
+						<input class="mui-input-clear name" type="file" name="file" id="file" style="display: none;"/>
+						<button class="mui-btn-blue " id="do" name="do" style="display: none;">提交</button>
+					</form>
+				</div>
+				 <form id="form" style="margin-left: 2%; text-align: center;  display: none;">
+						<a href="javascript:;" class="file1">视频上传
+							<input class="mui-input-clear name" type="file1" name="file1" id="file1" />
+						</a>
+						<button class="mui-btn-blue " id="do" name="do" style="display: none;">提交</button>
+					</form>
+				<div style="display: block;width: auto;position: absolute;top: 60px;left: 160px;" id="red">
+				   	<img src="../public/img/42.jpg" />
+				    <p style="text-align: center;">红包</p>
+				</div>
+		    </div>
+	    </nav>
+		<div class="mui-content" id="msg-list">
+			<!--me说话-->
+			<!--<div class="chat-me-hear">
+				<div class="frien_img imgme">
+					<img src="../public/img/1.png"/>
+				</div>
+				<div class="chat-me">你好！</div>		
+			</div>-->
+			<!--对方说话-->
+			<!--<div class="chat-ta-hear">
+				<div class="frien_img">
+					<img src="../public/img/1.jpg"/>
+				</div>	
+				<div class="chat-ta">你好！</div>		
+			</div>-->
+			<!--me说话-->
+			<!--<div class="chat-me-hear">
+				<div class="frien_img">
+					<img src="../public/img/1.png"/>
+				</div>
+				<div class="chat-me me" style="padding: 0px;border-radius: 5px;">
+					<!--<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-media confirmBtn" style="background: #FA9D3B;">
+							<img class="mui-media-object mui-pull-left" src="../public/img/43.jpg" style="max-width: 30px;height: 35px;margin-top: 5px;" />
+							<div class="mui-media-body" style="padding: 0;">
+								<span class="font-14 white">人人有份，人人有份</span>
+								<p class="font-12 white">查看礼包</p>
+							</div> 
+						</li>
+						<li class="mui-table-view-cell">
+							<p style="font-size: 12px;line-height: 0px;">金币礼包</p>
+						</li>
+					</ul>-->
+				<!--</div>		
+			</div>-->
+		</div>
+		<!--<div class="mui-popup mui-popup-in mui-acive" style="display: block;">
+			<div class="mui-popup-inner">
+				<div class="mui-popup-text" style="background: #D95045;">
+					<div class="bbs-pulish-img mui-text-center">
+						<p class="xx" style="position: absolute;top: 10px;left: 10px;font-size: 30px;">×</p>
+						<img src="../public/img/1.png" style="max-width: 45px;height: 45px;border-radius: 100%;margin-top: 20px;" />
+						<p>沉着的心</p>
+						<p>发了一个礼包，金额随机</p>
+						<p style="font-size: 20px;">恭喜发财，大吉大利！</p>
+						<p style="margin: 30px 0 40px 0;">
+							<img src="../public/img/44.jpg" style="max-width: 75px;height: 75px;border-radius: 100%;" onclick="openNewPage('club-red.html')"/>
+						</p>
+						<p style="padding-bottom: 20px;" onclick="openNewPage('club-red.html')">看看大家的手气></p>
+					</div>
+				</div>     
+			</div>
+		</div>-->
+		<div class="mui-popup-backdrop mui-active"></div>
+		<script type="text/javascript" src="../js/open.js"></script>
+		<script src="../js/mui.js"></script>
+		<script src="../js/jquery-2.1.4.min.js"></script>
+		<script>
+			$('.plus').on('tap',function(){
+				if($('.alert').hasClass('dis')){
+					$('.alert').removeClass('dis');
+				}else{
+					$('.alert').addClass('dis');
+				}
+				
+			});
+			mui('body').on('shown', '.mui-popup', function(e) {
+				//console.log('shown', e.detail.id);//detail为当前popover元素
+			});
+			mui('body').on('hidden', '.mui-popup', function(e) {
+				//console.log('hidden', e.detail.id);//detail为当前popover元素
+			});
+			$(".confirmBtn").on('tap', function() {
+				$('.mui-popup-backdrop').css('display','block');
+				$('.mui-popup-in').css('display','block');
+			});
+//			document.querySelector(".xx").addEventListener('tap',function(){
+//				$('.mui-popup-backdrop').css('display','none');
+//				$('.mui-popup-in').css('display','none');
+//			});
+		</script>
+		<script src="../js/mui.imageViewer.js"></script>
+		<script src="../js/arttmpl.js"></script>
+		<script src="../js/app/Chat.js"></script>
+	</body>
+</html>

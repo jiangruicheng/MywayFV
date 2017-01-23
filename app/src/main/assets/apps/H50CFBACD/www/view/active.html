@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>动态</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/iconfont.css" />
+		<script src="../js/jquery-2.1.4.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../js/appconf.js" ></script>
+		<script type="text/javascript" src="../js/active.js" ></script>
+		<script type="text/javascript" src="../js/share.js"></script>
+		<style>
+			.mui-card .mui-control-content {
+				padding: 10px;
+			}
+			.mui-segmented-control .mui-control-item.mui-active{background: black;}
+			.mui-segmented-control .mui-control-item{color: black;border-left: none;line-height: 30px;border-radius: 5px;}
+			.mui-segmented-control{border: 1px solid gainsboro;border-radius: 5px;}
+			.bbs-pulish-img img{max-width: 55px;height: 55px;border-radius: 100%;}
+			.bbs-pulish-img p{color: #000000;}
+			.mui-table-view .mui-media-object{max-height: 45px;width: 45px;border-radius: 100%;}
+			.mui-card{margin: 0 0 2px; border: none; padding: 10px; border-radius: inherit;}
+			.mui-card-header .mui-card-media-object img{border-radius: 100%; height: 40px;width: 40px;}
+			.mui-card-content .mui-card-media img{ width: 32%;height: 90px;}
+			.mui-card-footer button{padding: 2px 5px;}
+			.kong{margin-top: 4px;}
+			.mui-card-footer{margin-top: 15px;}
+			.mui-card-footer .iconfont{font-size: 18px;}
+			/*弹窗*/
+			.footer{position: fixed;right: 0; left: 0;background-color:#FFFFFF ; padding-top: 1.5em;}
+			.mui-grid-view.mui-grid-9{ background-color:#fff;border: none;}
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell{border:none;}
+			.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body{font-size: 12px;line-height: 12px;height: 12px;}
+			.mui-btn-block{padding:10px; font-size: 14px; margin: 0;border: none; border-radius: initial;border-top:1px solid #ccc;}
+			.mui-popover-arrow{display: none;}
+			#itma{width: 100%;height: 100%;z-index: 999999;position: fixed;top:0px;display: none;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-pull-left" onclick="openNewPage('message.html')">
+				<i class="mui-icon iconfont" style="font-size: 28px;">&#xe613;</i>
+			</a>
+			<h1 class="mui-title">动态</h1>
+			<a class="mui-pull-right" onclick="openNewPage('intro-active.html')">
+				<i class="mui-icon iconfont" style="font-size: 28px;">&#xe606;</i>
+			</a>
+		</header>
+		<div class="mui-content">
+			<div style="padding: 10px 40px;background: white;border-bottom: 1px solid gainsboro;">
+				<div id="segmentedControl" class="mui-segmented-control">
+					<a class="mui-control-item mui-active" href="#item1">
+				精华
+			</a>
+					<a class="mui-control-item" href="#item2">
+				最新
+			</a>
+				</div>
+			</div>
+			<div> 
+				<div id="item1" class="mui-control-content mui-active">
+					<div id="scroll" class="mui-scroll-wrapper">
+						<div class="mui-scroll activelist">
+							
+							<!--<ul class="mui-table-view">
+								<div class="mui-card kong">
+									<div class="mui-card-header mui-card-media">
+										<div class="mui-card-media-object mui-pull-left mui-col-xs-2">
+											<img src="../public/img/1.jpg" / onclick="openNewPage('my-active1.html')">
+										</div>
+										<div class="mui-card-media-body">
+											<span>沉着的心</span><i class="mui-icon iconfont mui-yellow" style="margin-left: 6px;font-size: 14px;">&#xe605;</i>
+											<p class="font-12">5分钟前</p>
+										</div>
+									</div>
+									<div class="mui-card-content" onclick="openNewPage('active-details.html')">
+										<div class="mui-card-content-inner">
+											<p style="color: #000000;">许多的回忆都将随着风景的好坏而去，梦永远都不知好歹地进行它的追求而发展下去，直到生命的烛光熄灭而止。</p>
+										</div>
+										<div class="mui-card-media">
+											<img src="../public/img/7.jpg"/>
+											<img src="../public/img/8.jpg"/>
+											<img src="../public/img/9.jpg"/>
+										</div>
+									</div>
+									<div class="mui-card-footer">
+										<button type="button" class="mui-btn"><i class="mui-icon iconfont">&#xe664;</i>赞</button>
+										<button type="button" class="mui-btn" onclick="openNewPage('active-details.html')"><i class="mui-icon iconfont">&#xe665;</i>评论</button>
+										<button type="button" class="mui-btn mui-pull-right"><a href="#room-share" style="color: black;"><i class="mui-icon iconfont">&#xe666;</i><span>转发</span></a></button>
+									</div>
+								</div>
+							</ul>-->
+						</div>
+					</div>
+				</div>
+				<div id="item2" class="mui-slider-item mui-control-content">
+						<div id="scroll2" class="mui-scroll-wrapper">
+							<div class="mui-scroll" id="mylist">
+					
+					<!--<ul class="mui-table-view">
+						<div class="mui-card kong">
+							<div class="mui-card-header mui-card-media">
+								<div class="mui-card-media-object mui-pull-left mui-col-xs-2">
+									<img src="../public/img/1.jpg" / onclick="openNewPage('my-infor.html')">
+								</div>
+								<div class="mui-card-media-body">
+									<span>沉着的心</span><i class="mui-icon iconfont mui-yellow" style="margin-left: 6px;font-size: 14px;">&#xe605;</i>
+									<p class="font-12">5分钟前</p>
+								</div>
+							</div>
+							<div class="mui-card-content" onclick="openNewPage('active-details.html')">
+								<div class="mui-card-content-inner">
+									<p style="color: #000000;">许多的回忆都将随着风景的好坏而去，梦永远都不知好歹地进行它的追求而发展下去，直到生命的烛光熄灭而止。</p>
+								</div>
+								<div class="mui-card-media">
+									<img src="../public/img/7.jpg"/>
+									<img src="../public/img/8.jpg"/>
+									<img src="../public/img/9.jpg"/>
+								</div>
+							</div>
+							<div class="mui-card-footer">
+								<button type="button" class="mui-btn"><i class="mui-icon iconfont">&#xe664;</i>赞</button>
+								<button type="button" class="mui-btn" onclick="openNewPage('active-details.html')"><i class="mui-icon iconfont">&#xe665;</i>评论</button>
+								<button type="button" class="mui-btn mui-pull-right">
+									<a href="#room-share" style="color: black;">
+										<i class="mui-icon iconfont">&#xe666;</i>
+										<span>转发</span>
+									</a>
+								</button>
+							</div>
+						</div>
+					</ul>-->
+				</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<img src="../public/img/10.jpg" alt="" id='itma' />
+		<!--转发-->
+		<div id="room-share" class="mui-popover" style="height: 0 !important;">	
+			<div class="footer mui-bar-footer" >
+					<ul class="mui-table-view mui-grid-view mui-grid-9">
+			            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#" id ="weixin">
+			                    <span class="mui-icon iconfont mui-lvs">&#xe609;</span>
+			                    <div class="mui-media-body">微信</div></a></li>
+			            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#" id="qq">
+			                    <span class="mui-icon iconfont mui-blus">&#xe608;</span>
+			                    <div class="mui-media-body">QQ</div></a></li>
+			            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#" id="wxsline">
+			                    <span class="mui-icon iconfont mui-lvs">&#xe60a;</span>
+			                    <div class="mui-media-body">朋友圈</div></a></li>
+			            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#" id="kone">
+			                    <span class="mui-icon iconfont" style="color: #FFAD19;">&#xe604;</span>
+			                    <div class="mui-media-body">QQ空间</div></a></li>
+     			   </ul> 
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/open.js" ></script>
+		<script>
+			mui.init({
+			swipeBack: false
+			});
+			(function($) {
+			$('.mui-scroll-wrapper').scroll({
+			indicators: true //是否显示滚动条
+			});	 
+			})(mui);
+			//高度自适应	
+			$(document).ready(function(){	
+			$(".mui-control-content").css({ "color": "black", "min-height": (document.documentElement.clientHeight-97)+"px" });	
+			})
+			 function h(){
+				 setTimeout(function(){
+					 if(window.innerHeight){
+					 	$(".mui-control-content").css({"min-height":(window.innerHeight-97)+"px"});console.log(window.innerHeight);
+					 }
+					 else{
+					 	h();
+					 }
+				 },100);
+			 }
+			 h();
+		</script>
+	</body>
+</html>

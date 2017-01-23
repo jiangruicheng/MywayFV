@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"> 
+		<title>立即购买</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/fonts/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../css/popup.css" />
+		<script src="../js/jquery-2.1.4.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../js/appconf.js" ></script>
+		<script type="text/javascript" src="../js/buy-ok.js" ></script>
+		<style>
+			.mui-table-view .mui-media-object{max-width: 95px;height: 95px;}
+			.mui-bar .mui-btn{top:0;bottom: 0; padding: 13px 25px 20px;border: none; background-color: #e3393c;color: white;border-radius: inherit;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">立即购买</h1>
+		</header>
+		<nav class="mui-bar mui-bar-footer" style="padding-right: 0;">
+			<div class="mui-pull-right btn">
+				<div class="jiesuan">
+					<span style="margin-top: 13px;display: inline-block;">合计：<span class="mui-red" id="heji">0</span></span>
+					<button type="button" class="mui-btn ord plusready bnthh">提交订单</button>
+				</div>
+			</div>
+		</nav>
+		<div class="mui-content">
+			<div id="useraddr">
+				<!--<ul class="mui-table-view mui-grid-view" onclick=newaddr()><li class="mui-table-view-cell mui-col-xs-1"><i class=" iconfont" style="margin-top: 35px;">还没有填写地址！！马上去填写&#xe661;</i></li></ul>-->
+				<!--<ul class="mui-table-view mui-grid-view" onclick="newaddr()"><li class="mui-table-view-cell mui-col-xs-1">
+					<i class="mui-icon iconfont" style="margin-top: 35px;">&#xe662;</i></li>
+					<li class="mui-table-view-cell mui-col-xs-10 mui-text-left"><span>收货人：黄飞鸿</span><span style="float: right;">13192728080</span>
+					<p class="back" style="margin-top: 8px;">收货地址：广东省深圳市沙井中心卓越时代大厦5楼503</p>
+					</li><li class="mui-table-view-cell mui-col-xs-1"><i class="mui-icon iconfont" style="margin-top: 35px;">&#xe661;</i></li></ul>-->
+			</div>
+			<div class="m5">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media" id="goods">
+						<img class="mui-media-object mui-pull-left" src="../public/img/28.jpg" />
+						<div class="mui-media-body">
+							<p class="back" id ="goodsname">小米9号平衡车</p>
+							<p style="margin-top: 10px;color: #E3393C;">¥<span id="money">1500</span></p>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span style="line-height: 2.4em;">购买数量</span>
+							<div class="mui-numbox mui-pull-right" data-numbox-min='0' style="right: 5%;">
+								<button type="button" class="mui-btn mui-btn-numbox-minus">-</button>
+								<input type="text" class="mui-input-numbox" id="number"  value="1"/ >
+								<button type="button" class="mui-btn mui-btn-numbox-plus">+</button>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view"> 
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right confirmBtn">
+							颜色
+							<span class="mui-pull-right" style="margin-right: 15px;" id="yanse">白色</span>
+						</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-input-row">
+						<span>备注：</span><input style="border: none;" placeholder="选填：对本次交易的说明" id="textwq"/>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="mui-popup mui-popup-in">
+			<div class="mui-popup-inner">
+				<div class="mui-popup-title">
+					<h4>选择颜色</h4>
+				</div>
+				<div class="mui-popup-text">
+					<form class="mui-input-group">
+						<div class="mui-input-row mui-radio">
+							<label>白色</label>
+							<input name="radio1" type="radio" value="白色" checked>
+						</div>
+						<div class="mui-input-row mui-radio">
+							<label>黑色</label>
+							<input name="radio1" type="radio" value="黑色">
+						</div>
+					</form>
+				</div>     
+			</div>
+			<div class="mui-popup-buttons">
+				<div class="mui-col-xs-6 mui-pull-left cancel">取消</div>
+				<div class="mui-col-xs-6 mui-pull-left mui-red sure">确定</div>
+			</div>
+		</div>
+		<div class="mui-popup-backdrop mui-active"></div>
+	</body>
+	<script type="text/javascript" src="../js/open.js"></script>
+	<script type="text/javascript" src="../libs/mui/mui.js"></script>
+	<script type="text/javascript" src="../libs/jquery/jquery.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		//mui初始化
+		mui.init({
+			swipeBack: true //启用右滑关闭功能
+		});
+		$(".confirmBtn").on('tap', function() {
+				$('.mui-popup-backdrop').css('display','block');
+				$('.mui-popup-in').css('display','block');
+			});
+		document.querySelector(".mui-popup-buttons").addEventListener('tap',function(){
+			$('.mui-popup-backdrop').css('display','none');
+			$('.mui-popup-in').css('display','none');
+		});
+		var val="白色";
+		$(".mui-radio>input[type='radio']").each(function(i){
+			$(this).on("click",function(){
+				val=$(this).val()
+			})
+		})
+		$(".sure").on("tap",function(){
+			$(".confirmBtn>span").text(val)
+		})
+		
+//		document.addEventListener('plusready',function(){
+//				$('.ord').on('click',function(){
+//				plus.nativeUI.actionSheet( {cancel:"取消",buttons:[{title:"微信支付"},{title:"支付宝支付"},]}, function(e){
+//				console.log( "User pressed: "+e.index );
+//				var i=e.index;
+//				if(i==1){ 
+//				console.log(orderid+","+pay_money);  
+//				type='微信';
+//				payment(orderid ,pay_money,type);  
+//				}else if(i==2){   
+//				type='支付宝';
+//				console.log(orderid+","+pay_money); 
+//				payment(orderid ,pay_money,type);  
+//				}
+//			});
+//			})
+//			})
+	</script>
+</html>
+

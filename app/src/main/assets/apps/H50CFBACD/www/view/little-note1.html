@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>聊天</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/fonts/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/chat.css">
+		<style>
+			.mui-bar.mui-bar-nav .mui-action-back,.mui-bar-nav h1,.mui-bar-nav h5{ color: white;}
+			.frien_img img{width: 45px;height: 45px;border-radius: 100%;}
+			.alert{height:180px;background-color: white;padding: 20px 0px;}
+			.dis{display:none;}
+			.nav-bar-footer{bottom: 0;position: fixed;right: 0px;left: 0px;}
+			.yj{
+			    padding:10px;
+			    -moz-border-radius: 15px; 
+			    -webkit-border-radius: 15px; 
+			    border-radius:15px;           
+				}
+			.nav-bar-footer{background: white;}	
+			.alert img{max-width: 45px;height: 45px;border-radius: 5px;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">沉着的心</h1>
+		</header>
+		<nav class="nav-bar nav-bar-footer">
+			<div style="margin-top: 5px;">
+				<div style="float: left;margin: 6px 0 0 10px;">
+					<i class="mui-icon iconfont plus" style="font-size: 24px;">&#xe627;</i>
+				</div>
+				<div style="float: left;width: 68%;margin: 0 10px;">
+					<input style="width: 100%;padding: 5px;border: 1px solid gray;" />
+				</div>
+				<div style="float: left;margin-bottom: 5px;">
+					<button type="button">发送</button>
+				</div>
+			</div>
+	     	<div class="alert dis">
+				<div style="width: auto;position:absolute;top: 60px;left: 20px;">
+				   	<img src="../public/img/38.jpg" />
+				     <p style="margin-left: 10px;">图片</p>
+				</div>
+				<div style="display: block;width: auto;position: absolute;top: 60px;left: 80px;">
+				   	<img src="../public/img/39.jpg" />
+				    <p style="text-align: center;">拍照</p>
+				</div>
+		    </div>
+	    </nav>
+		<div class="mui-content">
+			<!--me说话-->
+			<div class="chat-me-hear">
+				<div class="frien_img">
+					<img src="../public/img/1.png"/>
+				</div>
+				<div class="chat-me">你好！</div>		
+			</div>
+			<!--对方说话-->
+			<div class="chat-ta-hear">
+				<div class="frien_img">
+					<img src="../public/img/1.jpg"/>
+				</div>	
+				<div class="chat-ta">你好！</div>		
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/open.js"></script>
+		<script src="../js/mui.js"></script>
+		<script src="../js/jquery-2.1.4.min.js"></script>
+		<script>
+			$('.plus').on('tap',function(){
+				if($('.alert').hasClass('dis')){
+					$('.alert').removeClass('dis');
+				}else{
+					$('.alert').addClass('dis');
+				}
+				
+			})
+		</script>
+	</body>
+</html>

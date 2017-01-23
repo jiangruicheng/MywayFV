@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>车身状态</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/fonts/iconfont.css" />
+		<style>
+			.mui-grid-view.mui-grid-9{background: white;}
+			.mui-grid-view.mui-grid-9 i{font-size: 35px;}
+			.mui-grid-view.mui-grid-9 p{color: #000000;margin: 10px 0 0 0;}
+			.mui-input-row{clear: none;}
+			/*radio大小*/
+			.mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before{
+				font-size: 20px;
+			}
+			.mui-checkbox input[type=checkbox], .mui-radio input[type=radio][type=radio]{
+				top:8px;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">车身状态</h1>
+		</header>
+		<div class="mui-content">
+			<div>
+				<ul class="mui-table-view mui-grid-view mui-grid-9">
+					<li class="mui-table-view-cell mui-col-xs-6">
+						<i class="mui-icon iconfont mui-blus">&#xe633;</i>
+						<p>我的路径</p>
+					</li>
+					<li class="mui-table-view-cell mui-col-xs-6">
+						<i class="mui-icon iconfont" style="color: #68C67A;">&#xe654;</i>
+						<p>故障检测</p>
+					</li>
+					<li class="mui-table-view-cell mui-col-xs-6">
+						<i class="mui-icon iconfont" style="color: #AAA0ED;">&#xe657;</i>
+						<p>音乐定制</p>
+					</li>
+				</ul>
+			</div>
+			<div class="mui-content-padded">
+				<span>最大速度</span>
+			</div>
+			<div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						 <div class="mui-input-range">
+				            <label style="float: right;padding-top: 8px;font-size: 20px;">30km/h</label>
+				            <input type="range" value="30" min="0" max="30" style="width: 75%;" >
+				        </div>
+					</li>
+				</ul>
+			</div>
+			<div class="mui-content-padded">
+				<span>音量</span>
+			</div>
+			<div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						 <div class="mui-input-range">
+				            <label style="float: right;padding-top: 8px;font-size: 20px;">100%</label>
+				            <input type="range" value="100" min="0" max="100" style="width: 80%;" >
+				        </div>
+					</li>
+				</ul>
+			</div>
+			<div style="margin-top: 10px;">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<span>提手按键</span>
+						<div class="mui-switch mui-switch-blue mui-switch-mini">
+							<div class="mui-switch-handle"></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="mui-content-padded">
+				<p style="color: #000000;">提手按键位于提手内侧，用于防止车体离地时车轮飞转。启用时，按下按键车体进入待机状态，车轮</p>
+				<p style="color: #000000;">关闭时按键无作用。</p>
+			</div>
+			<div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span>车身校正</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div style="margin-top: 10px;">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span>修改蓝牙密码</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="mui-content-padded">
+				<span>当前固件版本4.564.1</span>
+			</div>
+			<div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span>固件升级</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/mui.js" ></script>
+</html>

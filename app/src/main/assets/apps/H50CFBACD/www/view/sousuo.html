@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>搜索中</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/fonts/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../css/popup.css" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">搜索中...</h1>
+			<a class="mui-pull-right">
+				<i class="mui-icon iconfont" style="font-size: 18px;line-height: 22px;">&#xe644;</i>
+			</a>
+		</header>
+		<div class="mui-content">
+			<div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell confirmBtn">
+						L6<span style="margin-left: 25px;">L6-6EE50007</span>
+						<span style="float: right;"><i class="mui-icon iconfont">&#xe658;</i></span>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell confirmBtn">
+						R1N<span style="margin-left: 14px;">L6-6EE50007</span>
+						<span style="float: right;"><i class="mui-icon iconfont">&#xe658;</i></span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="mui-popup mui-popup-in">
+			<div class="mui-popup-inner" style="border-bottom: 1px solid gainsboro;">
+				<div class="mui-popup-text">
+					<div class="bbs-pulish-img mui-text-center">
+						<span style="line-height: 44px;">设备密码</span>
+						<p style="margin-bottom: 0px;line-height: 88px;margin-top: -20px;">
+							<input placeholder="请输入密码" />
+						</p>
+					</div>
+				</div>     
+			</div>
+			<div class="mui-popup-buttons">
+				<div class="mui-col-xs-6 mui-pull-left cancel">取消</div>
+				<div class="mui-col-xs-6 mui-pull-left mui-red sure">确定</div>
+			</div>
+		</div>
+		<div class="mui-popup-backdrop mui-active"></div>
+	</body>
+	<script type="text/javascript" src="../js/mui.js" ></script>
+	<script type="text/javascript" src="../js/open.js" ></script>
+	<script type="text/javascript" src="../js/jquery-2.1.4.min.js" ></script>
+	<script type="text/javascript" charset="utf-8">
+		$(".confirmBtn").on('tap', function() {
+				$('.mui-popup-backdrop').css('display','block');
+				$('.mui-popup-in').css('display','block');
+			});
+		document.querySelector(".mui-popup-buttons").addEventListener('tap',function(){
+			$('.mui-popup-backdrop').css('display','none');
+			$('.mui-popup-in').css('display','none');
+		});
+	</script>
+</html>

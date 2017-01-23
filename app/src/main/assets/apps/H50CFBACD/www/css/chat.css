@@ -1,0 +1,571 @@
+html,body{
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+.fl{float: left;}
+.fr{float: right;}
+.content{padding-top: 45px;}
+.white{color: white;} /*白色*/
+.size8{font-size: 1em;}
+.size3{font-size:3em;}
+.size27{font-size:2.7em;}
+.size23{font-size:2.3em;}
+
+.mui-table-view-cell:after {
+    height:0px;
+}
+.back-top{
+    position: fixed;
+    z-index: 99;
+    bottom: 4em;
+    right: 2em;
+}
+.back-top i{
+	display:none;
+    color:rgba(0, 121, 255, 0.31);
+    font-size: 2em;
+}
+.top_nav{
+	background:#00C6FF;
+}
+.background{
+	background: white;
+}
+.border{
+	border: 1px red solid;
+}
+/*商会动态 /资讯*/
+.chamber-commerce-trends{
+	padding:.6em 1em .6em 1em;
+	margin-bottom: 1px;
+}
+.chamber-commerce-trends span:nth-child(1){
+	color: #EB4F38;
+}
+.chamber-commerce-trends span:nth-child(3){
+	float: right;
+	color: #808080;	
+}
+/*图片*/
+.chamber-commerce-img{
+
+	padding:.5em .7em;
+	margin-bottom: 1px;
+	
+}
+.chamber-commerce-img img{
+	
+	width:100%;
+}
+/*动态text*/
+.trend-text{
+	padding:.5em 1em;
+	overflow: hidden;
+	margin-bottom: 1px;
+	
+}
+.trend-text span:nth-child(1){
+	color:#000;
+	width: 75%;
+	float: left;
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+.trend-text span:nth-child(2){
+	margin-left: 0;
+	width: 20%;
+	float:right;
+}
+.trend-text span:nth-child(2) img{
+	width: 100%;	
+}
+/*商会底栏*/
+.chamber-commerce-nav{
+	background:#F8F8F8;
+}
+.mui-bar-tab .mui-tab-item.mui-active {
+color:#2bb2e8;
+}
+
+/*论坛*/
+.bbs-body{
+	padding:.5em 1em;
+	margin-bottom:1px;
+	
+}
+/*头部*/
+.bbs-body-1{
+	overflow: hidden;
+}
+.bbs-body-img{
+	width: 14%;
+	float: left;
+	margin-right:.5em;	
+}
+.bbs-body-img img{
+	border-radius:4px ;
+	width:100%;	
+}
+.bbs-body-1 span:nth-child(2){
+	color:#000;
+}
+.bbs-body-1 span:nth-child(3){
+	color:#919191;
+	float: right;	
+}
+/**/
+.bbs-body-2 span:nth-child(3){
+	color:#000;		
+}
+.bbs-body-2 img{
+	width: 30%;	
+}
+/*我的商会---我加入的商会*/
+.me-charber{
+	padding: .5em .4em;
+	overflow: hidden;
+	margin-bottom: .2em;
+}
+.me-charber div{
+	width: 25%;
+	float: left;
+}
+.me-charber span{
+	display: block;
+	
+	padding:.2em 1.1em;
+	
+}
+.me-charber img{
+	border-radius:4px ;
+	width: 100%;
+}
+.me-charber h6{	
+	text-align: center;
+	color: #000;	
+}
+/*商会资料*/
+.chamber-information-hear{
+	overflow: hidden;
+	padding:.5em 1em .2em 1em;
+	position: relative;
+	margin: 1px;
+}
+.chamber-information-hear i{
+	width: 20%;
+	float: left;	
+}
+.chamber-information-hear img{
+	width: 100%;	
+	border-radius: 5px;
+}
+.chamber-information-hear>div{
+	padding-top:.2em;
+	width: 75%;
+	float: right;	
+}
+.chamber-information-hear-2{
+	position: absolute;
+	bottom: .4em;	
+} 
+/*商会成员*/
+.chamber-commerce-trends span:nth-child(4){
+	margin-right: 1em;
+	float: right;
+	color: red;	
+}
+.charber-poper{
+	margin-bottom:.3em ;
+}
+/*商会简介*/
+.chamber-information-text{
+	padding: .7em 1em;
+}
+.chamber-information-text div:nth-child(2){
+	padding:.5em .7em;
+}
+/*加入的商会*/
+.me-add{
+	margin: 1em 0em .5em 0em;
+}
+/*消息*/
+.chamber-news{
+	padding: .5em 1em;
+	overflow: hidden;
+	position: relative;
+	margin-bottom: 1px;
+}
+.chamber-news i{
+	width: 20%;
+	float: left;	
+}
+.chamber-news img{
+	/*border-radius: 2px;*/
+	width: 100%;
+}
+.chamber-news div{
+	margin-top:.3em ;
+	width: 78%;
+	float: right;
+}
+.chamber-news span:nth-child(2){
+	float: right;
+	color:#8f8f94;
+	font-size:14px;
+}
+.chamber-news span:nth-child(4){
+	position: absolute;
+	/*bottom: .5em;*/
+}
+/*发表主题*/
+.theme-text{
+	padding:.5em 1em;
+}
+.theme-text input{
+	border-radius: 3px;
+	border: 1px solid #CBCBCB;
+	margin: .5em 0em;
+	background:transparent;
+	text-align: left;
+	padding-left:.2em;	
+}
+.theme-text div textarea{
+	margin: .5em 0em;
+	text-align: left;
+	padding-left:.2em;
+}
+/*发表评价*/
+.charber-asses-hear{
+	padding:.5em 1em;
+	overflow: hidden;
+	margin-bottom: .5em;
+}
+.charber-asses-hear div:nth-child(1){
+	
+	width:20%;
+	float: left;
+}
+.charber-asses-hear div:nth-child(2){
+	width:45%;
+	float: left;
+}
+.charber-asses-hear img{
+	width:100%;
+}
+.charber-asses-hear-text{
+	margin-left: .9em;
+}
+.charber-asses-hear-text span:nth-child(1){
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+.charber-asses-hear-text span:nth-child(2){
+	color:red;
+
+}
+/*评价内容*/
+.chamber-assess-text{
+	margin-bottom: .5em;
+}
+.chamber-assess-text textarea{
+	border: none;
+}
+
+/*发表评价底栏*/
+.chamber-assess-nav{
+	background:#FF5252;
+	color:white;
+}
+.chamber-assess-nav h1{
+	color:white;
+}
+/*星级评价*/
+.chamber-assess-xinxin{
+padding:.5em 1em;	
+overflow: hidden;
+}
+.chamber-assess-xinxin-2 span{
+float: left;
+margin-right: .6em;
+color: #ccc;
+}
+.chamber-assess-xinxin div{
+float: right;	
+}
+/*论坛楼层评论*/
+.bbs-body-number{
+	margin-left: 2em;
+	margin-top: .5em;
+}
+.bbs-body-number-name{
+	color:#1EB7F6;
+}
+/*论坛楼层评论底栏*/
+.chamber-comment-nav{
+	background:#ececec;
+	padding: 13px;	
+	overflow: hidden;
+}
+/*.chamber-comment-nav div:nth-child(1){
+	width: 12%;
+	float: left;	
+}
+.chamber-comment-nav div:nth-child(1) i{
+	float: left;
+	height: 30px;
+	top:0px;
+	padding: 0px 10px;	
+}*/
+.chamber-comment-nav div:nth-child(1){
+	width: 80%;
+	float: left;	
+}
+.chamber-comment-nav div:nth-child(1) input{
+	border-radius:0px;
+	height: 30px;	
+	margin: 0px;
+}
+.chamber-comment-nav div:nth-child(2){
+	width: 20%;
+	float: right;	
+}
+.chamber-comment-nav div:nth-child(2) button{
+	float: right;
+	height: 30px;
+	top:0px;
+	padding: 0px 10px;	
+}
+/*与XX聊条*/
+.chat-ta-hear,.chat-me-hear{
+	padding: 1em;
+	overflow: hidden;
+}
+.chat-ta-hear div:nth-child(1),.chat-me-hear div:nth-child(1){		
+	width: 13%;
+	float: left;
+}
+.chat-me-hear div:nth-child(1){
+	float:right;
+}
+.chat-ta-hear img,.chat-me-hear img{	
+	width: 100%;
+}
+.chat-ta-hear div:nth-child(2),.chat-me-hear div:nth-child(2){
+	padding: .5em .8em;
+	width: auto;
+	max-width: 65%;	
+}
+.chat-ta-hear div:nth-child(2){
+	float:left;
+	left: .6em;
+}
+.chat-me-hear div:nth-child(2){
+	float:right;
+	right: .6em;
+}
+.chat-ta,.chat-me{
+  background-color:white;
+  position: relative;
+  border-radius:5px;
+}
+.chat-ta:after,.chat-ta:before,.chat-me:after,.chat-me:before {
+  border: solid transparent;
+  content: ' ';
+  height: 0;
+  position: absolute;
+  width: 0;
+}
+.chat-ta:after,.chat-ta:before {
+  right: 100%;
+}
+.chat-me:after,.chat-me:before {
+  left: 100%;
+}
+.chat-ta:after,.chat-me:after {
+  border-width:6px; 
+  top: 15px;
+}
+.chat-ta:after {
+  border-right-color:white;
+}
+.chat-me:after {
+  border-left-color:white;
+}
+/*(主题帖)*/
+.bss-local img{
+	width: 100%;
+}
+.bbs-local-commet span{
+	color:#000;
+}
+/*找清真*/
+.find-nav{
+	width: 70%;
+	margin:0 auto;	
+}
+.find-nav i,.find-nav span{
+	color:#FF5252;
+}
+.find-muslim-body{
+	padding:.5em 1em;
+	/*padding-right:0px;*/
+	overflow: hidden;
+	position:relative;
+	margin-bottom: 1px;
+}
+.find-muslim-body div:nth-child(1){
+	width: 20%;
+	float: left;
+}
+.find-muslim-body img{
+	width: 100%;
+}
+.find-muslim-body div:nth-child(2){
+	float: left;
+	padding-left:.5em;
+	width: 80%;
+}
+/*商会成员*/
+.charber-member-body {
+	padding: 1em 0em 1em 1em;
+	overflow: hidden;
+	margin-bottom: 1px;
+}
+.charber-member-body img{
+	width: 20%;
+	float: left;	
+}
+.charber-member-body span{
+	font-size:14px ;	
+	margin-top: .7em;
+	padding-left:.3em ;
+	width: 40%;
+	float: left;	
+}
+.charber-member-body i{
+	font-size:14px ;
+	margin-right: .3em;	
+}
+/*我的留言*/
+.school-me-comments-body{
+	padding:.5em 1em;
+	overflow: hidden;
+	margin-bottom: 1px;
+}
+.school-me-comments-body>div:nth-child(1){
+	float: left;
+	width: 25%;
+}
+.school-me-comments-body img{
+	width: 100%;
+}
+.school-me-comments-body>div:nth-child(2){
+	float: left;
+	padding-left:.5em;
+	width: 75%;	
+}
+.school-me-comments-body-2>div:nth-child(1){
+	overflow: hidden;
+}
+.school-me-comments-body-2>div:nth-child(1) span:nth-child(2){
+	float: right;	
+}
+.school-me-comments-body-2>div:nth-child(2){
+	float: left;
+	width: 30%;
+	line-height:17px;
+}
+.school-me-comments-body-2>div:nth-child(3){
+	line-height:17px;
+	float: left;
+	width: 50%;
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+/*我的讲座*/
+.me-charir{
+	overflow: hidden;
+	
+}
+.me-charir>div{
+	float: left;
+	width: 50%;
+	padding: .1em;	
+	text-align: center;
+}
+.me-charir img{
+	width: 100%;
+}
+/*中国拉面商学院*/
+.school-icon-head{
+	width:44px;
+	border-radius:1000px;
+	padding: 5px;
+	float: right;
+	position: relative;
+	right:.5em;
+}
+.school-icon-img{
+	overflow: hidden;
+	padding: 2.5em 1em .8em 1em;
+}
+.school-icon-img div{
+	float: left;
+	width: 33.33%;
+	text-align: center;	
+}
+.school-icon-img span{
+	display: block;
+	padding-top:.5em;
+	color: #000;
+}
+/*排行榜*/
+.shool-chart-ranking{
+	position:relative;
+	top:1em;
+	right: 1em;
+}
+
+.matop1{margin-top: 5px;}
+.matop2{margin-top: -5px;}
+.matop3 {margin-top: -20px;padding-right: 2em;}
+.find-muslim-house-img{
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+.find-muslim-house-img>div{
+	width: 33.33%;
+	text-align: center;
+	float: left;
+	padding: 3px;
+}
+.find-muslim-house-img img{
+	width: 100%;
+}
+.find-muslim-house-head{
+	line-height: 25px;
+	color: white;
+	padding:5px 15px;
+	background-position: -85px 0px;
+	margin-bottom: 2px;
+	margin-top: 3px;
+	background-image: url('../../images/chamber-commerce-img-1.png');
+	background-repeat: no-repeat;
+}
+.ellipsis-4{
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+}

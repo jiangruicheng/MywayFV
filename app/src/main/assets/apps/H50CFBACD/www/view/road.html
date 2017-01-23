@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>路线</title>
+		<link rel="stylesheet" href="../css/main.css" /> 
+		<link rel="stylesheet" href="../libs/mui/mui.css" /> 
+		<link rel="stylesheet" href="../libs/iconfont/fonts/iconfont.css" />
+		<script src="../js/jquery-2.1.4.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../js/appconf.js" ></script>
+		<script type="text/javascript" src="../js/road.js" ></script>
+		<!--<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=B58QVrfpCwUPxY8h11UoWADPoUe2aPyY"></script>-->
+		
+		<style>
+			.mui-bar-nav{box-shadow:none;}
+			.my .mui-table-view-cell{height: 200px;/*background: url(../public/img/12.jpg);background-size: cover;*/padding: 0;}
+			.my .mui-table-view-cell p,i{color: white;font-size: 12px;}
+			.my1 .mui-table-view-cell img{max-height: 25px;width: 25px;border-radius: 100%;}
+			.mui-bar-popover{
+				width: 45%; 
+				height: 90px;
+				list-style: none;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">路线</h1>
+			<a class="mui-pull-right" href="#Popover_0">
+				<i class="mui-icon iconfont">&#xe622;</i>
+			</a>
+		</header>
+		<div id="allmap"></div>
+		<div class="mui-content">
+			<div id="Popover_0" class="mui-popover mui-bar-popover">
+				<div class="mui-popover-arrow"></div>
+				<li class="mui-table-view-cell" onclick="openNewPage('record-road.html')"><i class="mui-icon iconfont mui-black">&#xe633;</i><span style="font-size: 14px;padding-left: 5px;">记录路径</span></li>
+				<li class="mui-table-view-cell" onclick="openNewPage('my-road.html')"><i class="mui-icon iconfont mui-black">&#xe632;</i><span style="font-size: 14px;padding-left: 5px;">我的路径</span></li>
+			</div>
+			<div id="roadlist">
+			</div>
+			<!--<div class="my">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell" onclick="openNewPage('road-cz.html')">
+						
+						<p class="mui-pull-right mui-icon " >
+							<span><i class="iconfont" style="font-size: 12px;">&#xe631;</i>200</span>
+							<span style="margin: 0 10px;"><i class="iconfont" style="font-size: 11px;">&#xe617;</i>成都</span>
+							<span>里程：2140km</span>
+						</p>
+						<h3 style="position: absolute;bottom: 10px;left: 15px;color: white;">川藏线</h3>
+					</li>
+				</ul>
+			</div>-->
+			<!--<div class="my1">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						
+						<span style="font-size: 14px;">风景：</span><i class="mui-icon iconfont" style="color: #FFB139;font-size: 13px;">&#xe610; &#xe610; &#xe610; &#xe610; &#xe610;</i>
+						<span class="mui-pull-right mui-media">
+							<img src="../public/img/1.jpg" class="mui-media-object mui-pull-left" />
+							<div class="mui-media-body" style="font-size: 14px;line-height: 25px;">
+								沉着的心
+							</div>
+						</span>
+					</li>
+				</ul>
+			</div>
+			<div class="my">
+				<ul class="mui-table-view" onclick="openNewPage('road-cz.html')">
+					<li class="mui-table-view-cell">
+						<p class="mui-pull-right mui-icon">
+							<span><i class="iconfont" style="font-size: 12px;">&#xe631;</i>200</span>
+							<span style="margin: 0 10px;"><i class="iconfont" style="font-size: 11px;">&#xe617;</i>成都</span>
+							<span>里程：2140km</span>
+						</p>
+						<h3 style="position: absolute;bottom: 10px;left: 15px;color: white;">川藏线</h3>
+					</li>
+				</ul>
+			</div>
+			<div class="my1">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<span style="font-size: 14px;">风景：</span><i class="mui-icon iconfont" style="color: #FFB139;font-size: 13px;">&#xe610; &#xe610; &#xe610; &#xe610; &#xe610;</i>
+						<span class="mui-pull-right mui-media">
+							<img src="../public/img/1.jpg" class="mui-media-object mui-pull-left" />
+							<div class="mui-media-body" style="font-size: 14px;line-height: 25px;">
+								沉着的心
+							</div>
+						</span>
+					</li>
+				</ul>
+			</div>-->
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/open.js"></script>
+	<script type="text/javascript" src="../libs/mui/mui.js"></script>
+	<script type="text/javascript" src="../libs/jquery/jquery.js"></script>
+	<script>
+		$("#Popover_0").click(function(){
+			$("#Popover_0").hide();
+		})
+	</script>
+</html>

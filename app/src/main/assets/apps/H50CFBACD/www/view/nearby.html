@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>附近</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/iconfont.css" />
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=B58QVrfpCwUPxY8h11UoWADPoUe2aPyY"></script>
+		<style>
+			body,.mui-content{background: white;}
+			.mui-card .mui-control-content {
+				padding: 10px;
+			}
+			.mui-control-content {
+				min-height: 570px;
+			}
+			.mui-segmented-control .mui-control-item.mui-active{background: none;color: white;}
+			.mui-segmented-control .mui-control-item{border-left: none;line-height: 33px;font-size: 17px;}
+			.mui-segmented-control{border: none;}
+			.mui-table-view .mui-media-object{max-width: 55px;height: 55px;border-radius: 100%;}
+			.mui-table-view-cell p{margin-top: 8px;}
+			.mui-bar.mui-bar-nav a{color: gray;}
+			
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: white;"></a>
+			<div style="padding: 0px 100px;">
+				<div id="segmentedControl" class="mui-segmented-control">
+					<a class="mui-control-item mui-active" href="#item1">
+						附近
+					</a>
+					<a class="mui-control-item" href="#item2">
+						地图
+					</a>
+				</div>
+			</div>
+		</header>
+		<div class="mui-content">
+			<div>
+				<div id="item1" class="mui-control-content mui-active">
+					<div id="scroll" class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<!--<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<img class="mui-media-object mui-pull-left" src="../public/img/1.jpg" onclick="openNewPage('my-active1.html')" />
+									<div class="mui-media-body">
+										<span style="line-height: 25px;">沉着的心</span><span style="float: right;line-height: 55px;font-size: 14px;">500m</span>
+										<p><i class="mui-icon iconfont" style="color: #FFA2A2;">&#xe615;</i> 20岁</p>
+									</div>
+								</li>
+							</ul>
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<img class="mui-media-object mui-pull-left" src="../public/img/1.png" onclick="openNewPage('my-active1.html')" />
+									<div class="mui-media-body">
+										<span style="line-height: 25px;">沉着的心</span><span style="float: right;line-height: 55px;font-size: 14px;">600m</span>
+										<p><i class="mui-icon iconfont" style="color: #54A1FF;">&#xe614;</i> 25岁</p>
+									</div>
+								</li>
+							</ul>
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<img class="mui-media-object mui-pull-left" src="../public/img/4.jpg" onclick="openNewPage('my-active1.html')" />
+									<div class="mui-media-body">
+										<span style="line-height: 25px;">沉着的心</span><span style="float: right;line-height: 55px;font-size: 14px;">700m</span>
+										<p><i class="mui-icon iconfont" style="color: #FFA2A2;">&#xe615;</i> 20岁</p>
+									</div>
+								</li>
+							</ul>
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<img class="mui-media-object mui-pull-left" src="../public/img/1.png" onclick="openNewPage('my-active1.html')" />
+									<div class="mui-media-body">
+										<span style="line-height: 25px;">沉着的心</span><span style="float: right;line-height: 55px;font-size: 14px;">1.0km</span>
+										<p><i class="mui-icon iconfont" style="color: #54A1FF;">&#xe614;</i> 25岁</p>
+									</div>
+								</li>
+							</ul>
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<img class="mui-media-object mui-pull-left" src="../public/img/5.jpg" onclick="openNewPage('my-active1.html')" />
+									<div class="mui-media-body">
+										<span style="line-height: 25px;">沉着的心</span><span style="float: right;line-height: 55px;font-size: 14px;">5.1km</span>
+										<p><i class="mui-icon iconfont" style="color: #FFA2A2;">&#xe615;</i> 20岁</p>
+									</div>
+								</li>
+							</ul>
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<img class="mui-media-object mui-pull-left" src="../public/img/1.png" onclick="openNewPage('my-active1.html')" />
+									<div class="mui-media-body">
+										<span style="line-height: 25px;">沉着的心</span><span style="float: right;line-height: 55px;font-size: 14px;">7.8km</span>
+										<p><i class="mui-icon iconfont" style="color: #54A1FF;">&#xe614;</i> 25岁</p>
+									</div>
+								</li>
+							</ul>
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<img class="mui-media-object mui-pull-left" src="../public/img/1.jpg" onclick="openNewPage('my-active1.html')" />
+									<div class="mui-media-body">
+										<span style="line-height: 25px;">沉着的心</span><span style="float: right;line-height: 55px;font-size: 14px;">10.0km</span>
+										<p><i class="mui-icon iconfont" style="color: #FFA2A2;">&#xe615;</i> 20岁</p>
+									</div>
+								</li>
+							</ul>
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<img class="mui-media-object mui-pull-left" src="../public/img/1.png" onclick="openNewPage('my-active1.html')" />
+									<div class="mui-media-body">
+										<span style="line-height: 25px;">沉着的心</span><span style="float: right;line-height: 55px;font-size: 14px;">10.1km</span>
+										<p><i class="mui-icon iconfont" style="color: #54A1FF;">&#xe614;</i> 25岁</p>
+									</div>
+								</li>
+							</ul>-->
+						</div>
+					</div>
+				</div>
+				<!--<div id="item2" class="mui-control-content" style="margin: 0;padding: 0;">
+					<ul class="mui-table-view" style="position: absolute;bottom: 0px;right: 0px;left: 0px;background: rgba(255,255,255,0.8);margin: 0;padding: 0;">
+						<li class="mui-table-view-cell mui-media">
+							<a class="mui-navigate-right">
+								<div id = "allmap" style="height: 500px;width: 100%;margin: 0;padding: 0; background-color: red;"></div>
+								<div class="mui-media-body">
+									<span style="line-height: 25px;"></span><span style="float: right;line-height: 55px;font-size: 14px;margin-right: 20px;"></span>
+									<p><i class="mui-icon iconfont" style="color: #FFA2A2;"></i> </p>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>-->
+				<div id="item2" class="mui-control-content">
+					<div id="allmap" style="width: 100%; min-height: 637px;;">
+					</div>
+					<ul class="mui-table-view" style="position: absolute;bottom: 0px;right: 0px;left: 0px;background: rgba(255,255,255,0.8); z-index: 1000;">
+						<li class="mui-table-view-cell mui-media" id="dianji" data-id="">
+							<a class="mui-navigate-right">
+								<img class="mui-media-object mui-pull-left userspic" src="../public/img/1.jpg"  />
+								<div class="mui-media-body">
+									<span style="line-height: 50px;" class="name"><!--沉着的心--></span><span style="float: right;line-height: 55px;font-size: 14px;margin-right: 20px;" id="juli">0m</span>
+									<div id="years">
+										<!--<p><i class="mui-icon iconfont" style="color: #FFA2A2;">&#xe615;</i><span >20</span>岁</p>-->
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/open.js" ></script>
+		<script type="text/javascript" src="../js/jquery-2.1.4.min.js" ></script>
+		<script type="text/javascript" src="../js/appconf.js"></script>
+		<script type="text/javascript" src="../js/nearby.js"></script>
+		<script>
+			mui.init({
+			swipeBack: false
+			});
+			(function($) {
+			$('.mui-scroll-wrapper').scroll({
+			indicators: true //是否显示滚动条
+			});	
+			})(mui);
+			//高度自适应	
+			$(document).ready(function(){	
+			$(".mui-control-content").css({ "color": "black", "min-height": (document.documentElement.clientHeight-44)+"px" });	
+			})
+		</script>
+		
+	</body>
+</html>

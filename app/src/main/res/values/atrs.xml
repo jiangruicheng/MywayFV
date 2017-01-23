@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<declare-styleable name="ArcProgressBar">
+        <attr name="color_style" format="integer"/>
+        <attr name="title" format="string"/>
+        <attr name="value" format="string"/>
+        <attr name="scale" format="integer"/>
+    </declare-styleable>-->
+    <declare-styleable name="ArcProgBar">
+        <attr name="title" format="string"/>
+        <attr name="value" format="string"/>
+        <attr name="scale" format="integer"/>
+        <attr name="description" format="string"/>
+        <attr name="guide_scale" format="integer"/>
+        <attr name="guide_nub" format="integer"/>
+    </declare-styleable>
+    <declare-styleable name="SriiView">
+        <attr name="srii" format="boolean"/>
+    </declare-styleable>
+
+</resources>

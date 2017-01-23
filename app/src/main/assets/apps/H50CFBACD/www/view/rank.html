@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的红包</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/iconfont.css" />
+		<script type="text/javascript" src="../js/appconf.js" ></script>
+		<style>
+			body,.mui-content{background: white;}
+			.mui-card .mui-control-content {
+				padding: 10px;
+			}
+			.mui-control-content {
+				min-height: 530px;
+			}
+			.mui-segmented-control .mui-control-item.mui-active{background: none;color: white;}
+			.mui-segmented-control .mui-control-item{border-left: none;line-height: 30px;}
+			.mui-segmented-control{border: none;}
+			.bbs-pulish-img img{max-width: 55px;height: 55px;border-radius: 100%;}
+			.bbs-pulish-img p{color: #000000;}
+			.mui-table-view .mui-media-object{max-height: 45px;width: 45px;border-radius: 100%;}
+			.mui-bar.mui-bar-nav a{color: gray;}
+			.mui-table-view-cell p{font-size: 12px;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: white;"></a>
+			<div style="padding: 0px 50px;">
+				<div id="segmentedControl" class="mui-segmented-control">
+					<a class="mui-control-item mui-active" href="#item1">
+						月度排名
+					</a>
+					<a class="mui-control-item" href="#item2">
+						年度排名
+					</a>
+				</div>
+			</div>
+		</header>
+		<div class="mui-content">
+			<div>
+				<div id="item1" class="mui-control-content mui-active">
+					<div id="scroll" class="mui-scroll-wrapper">
+						<div class="mui-scroll" id="item">
+							<!--<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									<div class="bbs-pulish-img mui-text-center">
+										<img src="../public/img/1.jpg" onclick="openNewPage('my-active.html')" />
+										<p style="font-size: 14px;">沉着的心<i class="mui-icon iconfont mui-yellow" style="padding-left: 5px;">&#xe605;</i></p>
+										<p>10685.01km<span style="color: #E87D31;padding-left: 12px;">排名：20</span></p>
+										<p>击败了全国98%的车手<span style="padding-left: 12px;">小米9号平衡车</span></p>
+									</div>
+								</li>
+							</ul>
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<span class="mui-pull-left" style="line-height: 45px;margin-right: 6px;color: #E87D31;">1</span>
+									<img class="mui-media-object mui-pull-left" src="../public/img/1.jpg" onclick="openNewPage('my-active1.html')" />
+									<div class="mui-media-body">
+										<span style="line-height: 25px;">沉着的心</span><i class="mui-icon iconfont mui-yellow" style="padding-left: 5px;">&#xe605;</i><span style="float: right;line-height: 45px;">10685.01km</span>
+										<p>小米9号平衡车</p>
+									</div>
+								</li>
+							</ul>
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<span class="mui-pull-left" style="line-height: 45px;margin-right: 6px;color: #E87D31;">2</span>
+									<img class="mui-media-object mui-pull-left" src="../public/img/4.jpg" onclick="openNewPage('my-active1.html')" />
+									<div class="mui-media-body">
+										<span style="line-height: 25px;">沉着的心</span><i class="mui-icon iconfont mui-yellow" style="padding-left: 5px;">&#xe605;</i><span style="float: right;line-height: 45px;">10685.01km</span>
+										<p>小米9号平衡车</p>
+									</div>
+								</li>
+							</ul>
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<span class="mui-pull-left" style="line-height: 45px;margin-right: 6px;color: #E87D31;">3</span>
+									<img class="mui-media-object mui-pull-left" src="../public/img/5.jpg" onclick="openNewPage('my-active1.html')" />
+									<div class="mui-media-body">
+										<span style="line-height: 25px;">沉着的心</span><i class="mui-icon iconfont mui-yellow" style="padding-left: 5px;">&#xe605;</i><span style="float: right;line-height: 45px;">10685.01km</span>
+										<p>小米9号平衡车</p>
+									</div>
+								</li>
+							</ul>
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<span class="mui-pull-left" style="line-height: 45px;margin-right: 6px;">4</span>
+									<img class="mui-media-object mui-pull-left" src="../public/img/1.jpg"  onclick="openNewPage('my-active1.html')"/>
+									<div class="mui-media-body">
+										<span style="line-height: 25px;">沉着的心</span><i class="mui-icon iconfont mui-yellow" style="padding-left: 5px;">&#xe605;</i><span style="float: right;line-height: 45px;">10685.01km</span>
+										<p>小米9号平衡车</p>
+									</div>
+								</li>
+							</ul>
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<span class="mui-pull-left" style="line-height: 45px;margin-right: 6px;">5</span>
+									<img class="mui-media-object mui-pull-left" src="../public/img/4.jpg" onclick="openNewPage('my-active1.html')" />
+									<div class="mui-media-body">
+										<span style="line-height: 25px;">沉着的心</span><i class="mui-icon iconfont mui-yellow" style="padding-left: 5px;">&#xe605;</i><span style="float: right;line-height: 45px;">10685.01km</span>
+										<p>小米9号平衡车</p>
+									</div>
+								</li>
+							</ul>
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<span class="mui-pull-left" style="line-height: 45px;margin-right: 6px;">6</span>
+									<img class="mui-media-object mui-pull-left" src="../public/img/5.jpg" onclick="openNewPage('my-active1.html')" />
+									<div class="mui-media-body">
+										<span style="line-height: 25px;">沉着的心</span><i class="mui-icon iconfont mui-yellow" style="padding-left: 5px;">&#xe605;</i><span style="float: right;line-height: 45px;">10685.01km</span>
+										<p>小米9号平衡车</p>
+									</div>
+								</li>
+							</ul>
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<span class="mui-pull-left" style="line-height: 45px;margin-right: 6px;">7</span>
+									<img class="mui-media-object mui-pull-left" src="../public/img/1.jpg" onclick="openNewPage('my-active1.html')" />
+									<div class="mui-media-body">
+										<span style="line-height: 25px;">沉着的心</span><i class="mui-icon iconfont mui-yellow" style="padding-left: 5px;">&#xe605;</i><span style="float: right;line-height: 45px;">10685.01km</span>
+										<p>小米9号平衡车</p>
+									</div>
+								</li>
+							</ul>-->
+						</div>
+					</div>
+				</div>
+				<div id="item2" class="mui-control-content">
+					<!--<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<div class="bbs-pulish-img mui-text-center">
+								<img src="../public/img/1.jpg" onclick="openNewPage('my-active.html')" />
+								<p style="font-size: 14px;">沉着的心11<i class="mui-icon iconfont mui-yellow" style="padding-left: 5px;">&#xe605;</i></p>
+								<p>10685.01km<span style="color: #E87D31;padding-left: 12px;">排名：20</span></p>
+								<p>击败了全国98%的车手<span style="padding-left: 12px;">小米9号平衡车</span></p>
+							</div>
+						</li>
+					</ul>-->
+					
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/open.js" ></script>
+		<script type="text/javascript" src="../js/jquery-2.1.4.min.js" ></script>
+		<script type="text/javascript" src="../js/rank.js"></script>
+		<script>
+			mui.init({
+			swipeBack: false
+			});
+			(function($) {
+			$('.mui-scroll-wrapper').scroll({
+			indicators: true //是否显示滚动条
+			});	
+			})(mui);
+			//高度自适应	
+			$(document).ready(function(){	
+			$(".mui-control-content").css({ "color": "black", "min-height": (document.documentElement.clientHeight-44)+"px" });	
+			})
+		</script>
+	</body>
+</html>

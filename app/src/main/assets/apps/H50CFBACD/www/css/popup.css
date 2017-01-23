@@ -1,0 +1,63 @@
+	.mui-popup-backdrop.mui-active {
+	opacity: 1;
+	
+	}
+	.mui-popup-backdrop1.mui-active{
+	opacity: 1;
+	}
+	.mui-popup-backdrop,.mui-popup-backdrop1 {
+	position: fixed;
+	z-index: 998;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	-webkit-transition-duration: 400ms;
+	transition-duration: 400ms;
+	opacity: 0;
+	background: rgba(0,0,0,.6);
+	display: none;
+	
+	}
+	.mui-popup.mui-popup-in,.mui-popup.mui-popup-in1 {
+	transition-duration: 400ms;
+	-webkit-transform: translate3d(-50%,-50%,0) scale(1);
+	opacity: 1;
+	}
+	.mui-popup {
+	position: fixed;
+	z-index: 10000;
+	top: 50%;
+	left: 50%;
+	overflow: hidden;
+	width: 270px;
+	-webkit-transform: translate3d(-50%,-50%,0) scale(1.185);
+	border-radius:8px ;
+	color: #000;
+	display: none;
+	}
+	.mui-popup-inner,.mui-popup-buttons,.mui-popup-buttons1 {
+		position: relative;
+		background: rgba(255,255,255,.95);
+	}
+	.mui-popup-inner .mui-popup-title{
+		padding: 15px;
+		color: #e3393c;
+		border-bottom: 1px solid #CCCCCC;
+		
+	}
+	.mui-input-group .mui-input-row{height: 45px;}
+	.mui-input-row label{padding: 13px 15px;}
+	.mui-input-group .mui-input-row:after{height: 0;}
+	.mui-popup-buttons,.mui-popup-buttons1{text-align: center;height: 40px;line-height: 2.2; cursor: pointer;}
+	.mui-popup-buttons div:first-child,.mui-popup-buttons1 div:first-child{border-right: 1px solid #CCCCCC;  }
+	/*radio大小*/
+	.mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before{
+		font-size: 18px;
+	}
+	.mui-checkbox input[type=checkbox], .mui-radio input[type=radio][type=radio]{
+		top:12px;
+	}
+	.mui-checkbox input[type=checkbox]:checked:before, .mui-radio input[type=radio]:checked:before{
+		color: #e3393c;
+	}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>发礼包</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/iconfont.css" />
+		<style>
+			body,.mui-content{background: #FFFAF5;}
+			.mui-bar.mui-bar-nav{ background: #D84E43;}
+			.mui-table-view{width: 90%;margin: 0 auto; background-color:white;}
+			.mui-table-view:after,.mui-table-view:before{height: 0;}
+			.mui-table-view-cell{padding:1px 10px;}
+			.mui-input-row label{ width: 25%;text-align: left;padding: 11px 0px;}
+			.mui-input-row label~input{ width: 65%;text-align: right;font-size: 1em; padding: 0 15px 0 0;}
+			.btn{width: 90%;margin: auto;}
+			.btn button{padding: 6px;color: white;background: #D84E43;margin-top: 40px;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">发礼包</h1>
+		</header>
+		<div class="mui-content">
+			<form id="hongbao">
+				<div class="mui-table-view" style="margin-top: 30px;">
+					<div class="mui-table-view-cell">
+						<div class="mui-input-row">
+							<label class="back" style="float: left;">礼包个数</label>
+							<input type="number" id="number" style="float: left;"/>
+							<span style="float: left;margin-top: 10px;">个</span>
+						</div>
+					</div>
+				</div>
+				<!--<div style="margin-left: 10%;margin-top: 5px;">
+					<p>俱乐部共有200人</p>
+				</div>-->
+				<div class="mui-table-view">
+					<div class="mui-table-view-cell">
+						<div class="mui-input-row">
+							<label class="back" style="float: left;">总金额</label>
+							<input type="text" id="money" style="float: left;width: 61%;"/>
+							<span style="float: left;margin-top: 10px;">金币</span>
+						</div>
+					</div>
+				</div>
+				<!--<div style="margin-left: 10%;margin-top: 5px;">
+					<p>每个人抽到的金额随机</p>
+				</div>-->
+				<div class="mui-table-view">
+					<div class="mui-table-view-cell">
+						<div class="mui-input-row">
+							<label class="back" style="float: left;">留言</label>
+							<input id="message" type="text" style="float: left;width: 75%;padding-right: 0px;" placeholder="人人有份，人人有份！"/>
+						</div>
+					</div>
+				</div>
+				<div class="btn">
+					<button type="button" class="mui-btn mui-btn-block" id="ok">发送礼包</button>
+				</div>
+			</form>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/mui.js" ></script>
+	<script type="text/javascript" src="../js/open.js" ></script>
+	<script src="../js/jquery-2.1.4.min.js"></script>
+	<script src="../js/appconf.js"></script>
+	<script src="../js/app/send-red.js"></script>
+</html>

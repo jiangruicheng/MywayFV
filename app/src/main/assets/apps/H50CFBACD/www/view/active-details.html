@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>动态详情</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/fonts/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/chat.css">
+		<link rel="stylesheet" type="text/css" href="../css/popup.css" />
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery-2.1.4.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../js/appconf.js" ></script>
+		<script type="text/javascript" src="../js/share.js"></script>
+		<script type="text/javascript" src="../js/active-details.js" ></script>
+		<style>
+			.mui-content>.mui-card:first-child{margin-top: 0px;}
+			.mui-card{margin: 0 0 2px; border: none; padding: 10px; border-radius: inherit;}
+			.mui-card-header .mui-card-media-object img{border-radius: 100%; height: 40px;width: 40px;}
+			.mui-card-content .mui-card-media img{ width: 32%;height: 90px;}
+			
+			.mui-control-content {
+				background-color: white;
+				min-height: 275px;
+			}
+			.mui-control-content .mui-loading {
+				margin-top: 50px;
+			}
+			.mui-segmented-control{background: white;}
+			.mui-table-view .mui-media-object{border-radius: 100%; height: 40px;width: 40px;}
+			.mui-bar-footer{padding: 0px;}
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{color: #FFB126;}
+			.mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar{background: #FFB126;}
+			.mui-slider-indicator .mui-icon{line-height: 22px;height: 22px;font-size: 17px;width: 50px;color: #000000;}
+			
+			/*弹窗*/
+			.footer{position: fixed;right: 0; left: 0;background-color:#FFFFFF ; padding-top: 1.5em;}
+			.mui-grid-view.mui-grid-9{ background-color:#fff;border: none;}
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell{border:none;}
+			.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body{font-size: 12px;line-height: 12px;height: 12px;}
+			.mui-btn-block{padding:10px; font-size: 14px; margin: 0;border: none; border-radius: initial;border-top:1px solid #ccc;}
+			.mui-popover-arrow{display: none;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">动态详情</h1>
+		</header>
+		<div class="mui-bar mui-bar-footer">
+			<div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-input-row" style="padding: 10px 12px;">
+						<input placeholder="" style="width: 80%;height: 25px;border: 1px solid gray" id="meagetext"/>
+						<button type="button" class="mui-btn" style="padding: 6px;" id="bthn">发送</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="mui-content">
+			<div class="mui-card ping">
+				<!--<div class="mui-card-header mui-card-media">
+					<div class="mui-card-media-object mui-pull-left mui-col-xs-2">
+						<img src="../public/img/1.jpg" / onclick="openNewPage('my-infor.html')">
+					</div>
+					<div class="mui-card-media-body">
+						<span>执着的心</span><i class="mui-icon iconfont mui-yellow" style="margin-left: 6px;font-size: 14px;">&#xe605;</i>
+						<p class="font-12">5分钟前</p>
+					</div>
+				</div>
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						<p style="color: #000000;">许多的回忆都将随着风景的好坏而去，梦永远都不知好歹地进行它的追求而发展下去，直到生命的烛光熄灭而止。</p>
+					</div>
+					<div class="mui-card-media">
+						<img src="../public/img/7.jpg"/>
+						<img src="../public/img/8.jpg"/>
+						<img src="../public/img/9.jpg"/>
+					</div>
+				</div>-->
+			</div>
+			<div class="m5"> 
+				<div id="slider" class="mui-slider">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item" href="#item1mobile">评论<span id="pingnumber"></span></a>
+					<a class="mui-control-item" href="#item2mobile">赞<span id="likenumber"></span></a>
+					<a class="mui-control-item" href="#item3mobile"></a>
+					<a class="mui-control-item" id="like"><i class="mui-icon iconfont" >&#xe664;<span style="font-size: 14px;">赞</span></i></a>
+					<a class="mui-control-item" href="#room-share"><i class="mui-icon iconfont">&#xe666;<span style="font-size: 14px;">转发</span></i></a>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar" style="width: 20%;"></div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view pinlist">
+									<!--<li class="mui-media mui-table-view-cell">
+										<img class="mui-media-object mui-pull-left" src="../public/img/1.jpg" />
+										<div class="mui-media-body">
+											<span>执着的心</span><i class="mui-icon iconfont mui-yellow" style="margin-left: 6px;font-size: 14px;">&#xe605;</i>
+											<p style="color: #000000;font-size: 12px;">1分钟前</p>
+											<p style="color: #000000;">涨姿势！涨姿势！涨姿势！涨姿势！</p>
+										</div>
+									</li>-->
+									<!--<li class="mui-media mui-table-view-cell">
+										<img class="mui-media-object mui-pull-left" src="../public/img/1.jpg" />
+										<div class="mui-media-body">
+											<span>执着的心</span><i class="mui-icon iconfont mui-yellow" style="margin-left: 6px;font-size: 14px;">&#xe605;</i>
+											<p style="color: #000000;font-size: 12px;">1分钟前</p>
+											<p style="color: #000000;">回复 <span style="color: #0062CC;">执着的心</span>：恩恩</p>
+										</div>
+									</li>
+									<li class="mui-media mui-table-view-cell">
+										<img class="mui-media-object mui-pull-left" src="../public/img/1.jpg" />
+										<div class="mui-media-body">
+											<span>执着的心</span><i class="mui-icon iconfont mui-yellow" style="margin-left: 6px;font-size: 14px;">&#xe605;</i>
+											<p style="color: #000000;font-size: 12px;">1分钟前</p>
+											<p style="color: #000000;">涨姿势！涨姿势！涨姿势！涨姿势！</p>
+										</div>
+									</li>-->
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<div id="scroll2" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view likelist">
+									<!--<li class="mui-media mui-table-view-cell">
+										<img class="mui-media-object mui-pull-left" src="../public/img/1.jpg" />
+										<div class="mui-media-body">
+											<span>执着的心</span><i class="mui-icon iconfont mui-yellow" style="margin-left: 6px;font-size: 14px;">&#xe605;</i>
+											<p style="color: #000000;font-size: 12px;">1分钟前</p>
+										</div>
+									</li>
+									<li class="mui-media mui-table-view-cell">
+										<img class="mui-media-object mui-pull-left" src="../public/img/1.jpg" />
+										<div class="mui-media-body">
+											<span>执着的心</span><i class="mui-icon iconfont mui-yellow" style="margin-left: 6px;font-size: 14px;">&#xe605;</i>
+											<p style="color: #000000;font-size: 12px;">1分钟前</p>
+										</div>
+									</li>
+									<li class="mui-media mui-table-view-cell">
+										<img class="mui-media-object mui-pull-left" src="../public/img/1.jpg" />
+										<div class="mui-media-body">
+											<span>执着的心</span><i class="mui-icon iconfont mui-yellow" style="margin-left: 6px;font-size: 14px;">&#xe605;</i>
+											<p style="color: #000000;font-size: 12px;">1分钟前</p>
+										</div>
+									</li>
+									<li class="mui-media mui-table-view-cell">
+										<img class="mui-media-object mui-pull-left" src="../public/img/1.jpg" />
+										<div class="mui-media-body">
+											<span>执着的心</span><i class="mui-icon iconfont mui-yellow" style="margin-left: 6px;font-size: 14px;">&#xe605;</i>
+											<p style="color: #000000;font-size: 12px;">1分钟前</p>
+										</div>
+									</li>-->
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--转发-->
+		<div id="room-share" class="mui-popover" style="height: 0 !important;">	
+			<div class="footer mui-bar-footer" >
+					<ul class="mui-table-view mui-grid-view mui-grid-9">
+			            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#" id="weixin">
+			                    <span class="mui-icon iconfont mui-lvs">&#xe609;</span>
+			                    <div class="mui-media-body">微信</div></a></li>
+			            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#" id="qq">
+			                    <span class="mui-icon iconfont mui-blus">&#xe608;</span>
+			                    <div class="mui-media-body">QQ</div></a></li>
+			            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#" id="wxsline">
+			                    <span class="mui-icon iconfont mui-lvs">&#xe60a;</span>
+			                    <div class="mui-media-body">朋友圈</div></a></li>
+			            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#" id="kone">
+			                    <span class="mui-icon iconfont" style="color: #FFAD19;">&#xe604;</span>
+			                    <div class="mui-media-body">QQ空间</div></a></li>
+     			   </ul> 
+			</div>
+		</div>
+	</body>
+	
+	<!--<script src="../js/mui.js"></script>-->
+
+	<script type="text/javascript" src="../js/open.js" ></script>
+	<link href="../css/image.css" rel="stylesheet" />
+	<script src="../js/mui.previewimage.js"></script>
+	<script src="../js/mui.zoom.js"></script>
+	<!--<script src="../js/mui.imageViewer.js"></script>-->
+	<script>
+		mui.init({
+			swipeBack: false
+		});
+		(function($) {
+		$('.mui-scroll-wrapper').scroll({
+		indicators: true //是否显示滚动条
+		});	
+		mui('body').on('shown', '.mui-popover', function(e) {
+				//console.log('shown', e.detail.id);//detail为当前popover元素
+		});
+		mui('body').on('hidden', '.mui-popover', function(e) {
+				//console.log('hidden', e.detail.id);//detail为当前popover元素
+		});
+		})(mui);
+		//高度自适应	
+		$(document).ready(function(){	
+		$(".mui-control-content").css({ "color": "black", "min-height": (document.documentElement.clientHeight-377)+"px" });	
+		})
+		mui.previewImage();
+	</script>
+</html>

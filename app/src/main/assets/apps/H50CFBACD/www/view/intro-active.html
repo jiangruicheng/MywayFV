@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>发动态</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/fonts/iconfont.css" />
+		<script src="../js/jquery-2.1.4.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../js/appconf.js" ></script>
+		<script type="text/javascript" src="../js/intro-active.js" ></script>
+		<script type="text/javascript" src="../js/picshang.js" ></script>
+		<style>
+			/*弹窗*/
+			.mui-popover{position: fixed;top: 30%;left: 10%;}
+			.mui-popover .mui-table-view{background: white;}
+			.mui-popover-arrow{display: none;}
+			.pulish-img p>img {width: 20%; height: 60px; margin: 10px;}	
+    		.pulish-img{position: relative; clear: both;}
+    		.pulish-img p span{position: absolute;top: 2.0em; }
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">发动态</h1>
+			<a class="mui-pull-right">
+				<h5 style="line-height: 33px;" id="fabiao">发表</h5>
+			</a>
+		</header>
+		<div class="mui-content">
+			<div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-input-row">
+						<textarea cols="" rows="5" placeholder="说说你的想法..." style="border: none;margin-bottom: 0px;padding: 0px;" class="content"></textarea>
+					</li>
+				</ul>
+				<div class="pulish-img"><p id="showimg"></p></div>
+				<ul class="mui-table-view" style="margin-top: 4px;">
+					<li class="mui-table-view-cell mui-media topimg"  id="toppic" cname = "toppic" >
+						<i class="mui-icon iconfont"style="font-size: 55px;color: gray;">&#xe60b;</i>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--转发-->
+		<div id="tk" class="mui-popover">	
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<span>从相册中选取照片</span>
+				</li>
+		   </ul>
+		   <ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<span>拍照添加</span>
+				</li>
+		   </ul>
+		   <ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<span>从本地上传视频</span>
+				</li>
+				   <!--<form id="form" style="margin-left: 2%; text-align: center;">
+						<input class="mui-input-clear name" type="file" name="file" id="file" style="display: none;"/>
+				</form>-->
+		   </ul>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/mui.js" ></script>
+	<script type="text/javascript" src="../js/open.js" ></script>
+	<script type="text/javascript" src="../js/jquery-2.1.4.min.js" ></script>
+	
+<link rel="stylesheet" type="text/css" href="../css/image.css"/>
+<!--<script src="../js/mui.min.js"></script>-->
+<script src="../js/mui.zoom.js"></script>
+<script src="../js/mui.previewimage.js"></script>
+<script>
+mui.previewImage();
+</script>	
+</html>

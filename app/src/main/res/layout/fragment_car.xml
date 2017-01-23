@@ -1,0 +1,224 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@mipmap/bg"
+                android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="@color/colorPrimaryDark1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="车辆"
+            android:textColor="@color/white"
+            android:textSize="19sp"/>
+
+        <TextView
+            android:id="@+id/search_ble"
+            android:layout_width="42dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="@color/white"
+            android:textSize="28sp"/>
+    </RelativeLayout>
+
+
+    <TextView
+
+        android:id="@+id/car_id"
+        android:layout_width="120dp"
+        android:layout_height="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="52dp"
+        android:background="@mipmap/kuang"
+        android:gravity="center"
+        android:text="MYWAY"
+        android:textColor="@color/car_id_text_color"
+        />
+
+    <RelativeLayout
+        android:id="@+id/biaopan"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="90dp">
+
+
+        <com.cndll.myway.mywayfv.view.ArcProgBar
+            android:id="@+id/licheng"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_alignParentLeft="true"
+            app:guide_nub="5"
+            app:guide_scale="10"
+            app:scale="2"
+            app:title="总里程(km)"
+            />
+
+        <com.cndll.myway.mywayfv.view.ArcProgBar
+            android:id="@+id/dianliang"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_alignParentRight="true"
+            app:guide_nub="10"
+            app:guide_scale="10"
+            app:scale="1"
+            app:title="电量(%)"
+            />
+
+        <com.cndll.myway.mywayfv.view.ArcProgBar
+            android:id="@+id/sudu"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            app:guide_nub="5"
+            app:guide_scale="8"
+            app:scale="0"
+            app:title="时速(km/h)"
+            />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_alignParentBottom="true"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/conn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:background="@mipmap/lianjie"/>
+
+                    <TextView
+                        android:id="@+id/conn_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="未连接"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/statue"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:background="@mipmap/statue"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="车身状态"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/sock"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:background="@mipmap/sock"/>
+
+                    <TextView
+                        android:id="@+id/lock_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="锁车"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mode"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:background="@mipmap/mode"/>
+
+                    <TextView
+                        android:id="@+id/mode_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="模式切换"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@mipmap/logo"/>
+    </FrameLayout>
+</RelativeLayout>
+

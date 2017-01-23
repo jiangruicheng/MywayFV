@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>红包详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../css/chat.css" />
+		<link rel="stylesheet" type="text/css" href="../css/popup.css" />
+		<style type="text/css">
+			.dark{
+				background: darkred;
+			}
+			.mui-bar.mui-bar-nav a,.mui-bar.mui-bar-nav h1,.mui-bar.mui-bar-nav h5,.mui-bar.mui-bar-nav input{ color: white;}
+			.mui-bar.mui-bar-nav{background: #DE1E1E;}
+			.bbs-pulish-img{background: white;}
+			.bbs-pulish-img img{max-width: 55px;height: 55px;border-radius: 100%;margin-top: 15px;}
+			.my .mui-media-object{max-width: 45px;height: 45px;border-radius: 100%;}
+			
+			.bbs-pulish-img p{color: #DDBC84;font-size: 12px;}
+			.mui-popup-text{background-image: url(../public/img/2.png);background-size: cover;}
+			/*.bbs-pulish-img{background-image: url(../public/img/2.png);background-size: cover;border-radius: 24px;}*/
+			.mui-popup,.mui-popup-inner{background-color:rgba(255,255,255,0);}
+		</style>
+	</head>
+	<body class="dark">
+		<header class="mui-bar mui-bar-nav" style="display: none;">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">红包详情</h1>
+		</header>
+		<div class="mui-content" style="display: none;">
+			<div class="mui-table-view">
+					<div class="mui-table-view-cell" style="padding: 0px 0;">
+						<div class="bbs-pulish-img mui-text-center" style="background-color: white;">
+							<img src="../public/img/1.png" id="avatar"/>
+							<p class="back" style="margin-top: 5px;" id="nickname"></p>
+							<p style="margin-bottom: 0px;" id="message"></p>
+							<p class="back" style="line-height: 66px;"><span style="font-size: 30px;">&emsp;</span></p>
+						</div>
+					</div>
+			</div>
+			<div class="mui-content-padded">
+				<p id="tishi"></p>
+			</div>
+			<div class="my" id="list">
+			  <!--<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media">
+						<img class="mui-media-object mui-pull-left" src="../public/img/1.jpg" />
+						<div class="mui-media-body">
+							<span style="line-height: 45px;">沉着的心</span>
+							<div class="mui-pull-right">
+								<span class="mui-pull-right">85金币</span>
+								<p><i class="mui-icon iconfont" style="float: right;color: #FF9111;font-size: 12px;margin-top: 10px;">&#xe650;手气最佳</i></p>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media">
+						<img class="mui-media-object mui-pull-left" src="../public/img/1.jpg" />
+						<div class="mui-media-body">
+							<span style="line-height: 45px;">沉着的心</span>
+							<div class="mui-pull-right">
+								<span class="mui-pull-right">85金币</span>
+								<p><i class="mui-icon iconfont" style="float: right;color: #FF9111;font-size: 12px;margin-top: 10px;">&#xe650;手气最佳</i></p>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media">
+						<img class="mui-media-object mui-pull-left" src="../public/img/4.jpg" />
+						<div class="mui-media-body">
+							<span style="line-height: 45px;">沉着的心</span>
+							<div class="mui-pull-right">
+								<span class="mui-pull-right">80金币</span>
+							</div>
+						</div>
+					</li>
+				</ul>-->
+			</div>
+		</div>
+		
+		<div class="mui-popup mui-popup-in" style="display: none;" id="canget">
+			<div class="mui-popup-inner">
+				
+				<div class="mui-popup-text" style="background: #D95045;">
+					<div class="bbs-pulish-img mui-text-center">
+						<p class="xx" style="position: absolute;top: 10px;left: 10px;font-size: 30px;">×</p>
+						<img src="../public/img/1.png" id="avatar2" style="width: 45px;height: 45px;border-radius: 100%;margin-top: 20px;" />
+						<p id="nickname2"></p>
+						<p>发了一个礼包，金额随机</p>
+						<p style="font-size: 20px;" id="message"></p>
+						<p style="margin: 30px 0 40px 0;">
+							<img src="../public/img/44.jpg" style="max-width: 75px;height: 75px;border-radius: 100%;" id="open"/>
+						</p>
+						<p style="padding-bottom: 20px;" onclick="openNewPage('club-red.html')">看看大家的手气></p>
+					</div>
+				</div>     
+			
+			</div>
+		</div>
+		<div class="mui-popup-backdrop mui-active"></div>
+	</body>
+	<script type="text/javascript" src="../js/mui.js" ></script>
+	<script type="text/javascript" src="../js/open.js" ></script>
+	<script type="text/javascript" src="../js/jquery-2.1.4.min.js" ></script>
+	<script type="text/javascript" src="../js/appconf.js"></script>
+	<script type="text/javascript" src="../js/app/red-details.js"></script>	
+</html>

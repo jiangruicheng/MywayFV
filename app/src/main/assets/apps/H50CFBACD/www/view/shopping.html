@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>商城分类</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/fonts/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../css/main.css" />
+		<script src="../js/jquery-2.1.4.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../js/appconf.js" ></script>
+		<script type="text/javascript" src="../js/shopping.js" ></script>
+		<style>
+			body,
+			.mui-content {
+				background-color: white;
+			}
+			.mui-fullscreen {
+				margin-top: 44px;
+				padding: 0 !important;
+			}
+			
+			.mui-col-xs-3,
+			.mui-control-content {
+				overflow: hidden;
+				height: 100%;
+			}
+			
+			.mui-segmented-control .mui-control-item {
+				line-height: 50px;
+				width: 100%;
+			}
+			
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+				background-color: #fff;
+			}
+			
+			.nd-mall-indexnav a {
+				border: none;
+				background-color: #cbc6c6;
+				color: #000000 !important;
+			}
+			
+			.nd-mall-indexnav .mui-active {
+				color: #E26B6B !important;
+				border-left: 4px solid #E26B6B !important;
+			}
+			.mui-table-view{margin-top: -6px;}
+			.xx{border: 1px solid gainsboro;width: 48%;border-bottom: none;margin: 2px;}
+			.x{position: fixed;right: 0px;left: 0px;z-index: 10;}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<!--header-->
+			<header class="mui-bar mui-bar-nav zbx-header">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 id="title" class="mui-title">商城</h1>
+				<a class="mui-pull-right mui-icon" id='myorder' >
+					<h5>我的订单</h5>
+				</a>
+			</header>
+			<!--Im-->
+			<div class="mui-content mui-fullscreen">
+				<div class="mui-col-xs-3 x">
+					<div id="segmentedControls" class="mui-segmented-control mui-segmented-control-inverted mui-active mui-segmented-control-vertical nd-mall-indexnav">
+						<a class="mui-control-item mui-active" href="#content1">全部</a>
+						<div id="shoplist">
+							<!--<a class="mui-control-item" href="#content2">L系列</a>
+							<a class="mui-control-item" href="#content3">R系列</a>
+							<a class="mui-control-item" href="#content4">V系列</a>
+							<a class="mui-control-item" href="#content5">配件区</a>-->
+						</div>
+					</div>
+				</div>
+
+				<div id="segmentedControlContents" class="mui-col-xs-9 mui-pull-right">
+					<div id="content1" class="mui-control-content mui-active">
+						<!--<div class="mui-pull-left xx" onclick="openNewPage('goods-details.html')">
+							<img src="../public/img/27.jpg" style="height: 122px;" />
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									<p style="color: #000000;">小米9号平衡车</p>
+									<p style="font-size: 12px;color: #D42C4D;">¥1500.00</p>
+								</li>
+							</ul>
+						</div>-->
+						<!--<div class="mui-pull-right xx" onclick="openNewPage('goods-details.html')">
+							<img src="../public/img/28.jpg" style="height: 122px;" />
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									<p style="color: #000000;">小米9号平衡车</p>
+									<p style="font-size: 12px;color: #D42C4D;">¥1500.00</p>
+								</li>
+							</ul>
+						</div>
+						<div class="mui-pull-left xx" onclick="openNewPage('goods-details.html')">
+							<img src="../public/img/29.jpg" style="height: 122px;" />
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									<p style="color: #000000;">小米9号平衡车</p>
+									<p style="font-size: 12px;color: #D42C4D;">¥1500.00</p>
+								</li>
+							</ul>
+						</div>
+						<div class="mui-pull-right xx" onclick="openNewPage('goods-details.html')">
+							<img src="../public/img/30.jpg" style="height: 122px;" />
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									<p style="color: #000000;">小米9号平衡车</p>
+									<p style="font-size: 12px;color: #D42C4D;">¥1500.00</p>
+								</li>
+							</ul>
+						</div>
+						<div class="mui-pull-left xx" onclick="openNewPage('goods-details.html')">
+							<img src="../public/img/31.jpg" style="height: 122px;" />
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									<p style="color: #000000;">小米9号平衡车</p>
+									<p style="font-size: 12px;color: #D42C4D;">¥1500.00</p>
+								</li>
+							</ul>
+						</div>
+						<div class="mui-pull-right xx" onclick="openNewPage('goods-details.html')">
+							<img src="../public/img/32.jpg" style="height: 122px;" />
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									<p style="color: #000000;">小米9号平衡车</p>
+									<p style="font-size: 12px;color: #D42C4D;">¥1500.00</p>
+								</li>
+							</ul>
+						</div>-->
+					</div>	
+					<div id="content2" class="mui-control-content">
+						
+					</div>
+					<div id="content3" class="mui-control-content">
+						
+					</div>
+					<div id="content4" class="mui-control-content">
+						
+					</div>
+					<div id="content5" class="mui-control-content">
+						
+					</div>
+				</div>	
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/mui.js"></script>
+		<script type="text/javascript" src="../js/open.js"></script>
+		<script src="../js/mui.indexedlist.js"></script>
+		<script src="../js/mui.min2.js"></script>
+		<script src="../js/jquery-2.1.4.min.js"></script>
+	</body>
+
+</html>

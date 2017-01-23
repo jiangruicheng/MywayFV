@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>定制</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/iconfont.css" />
+		<style>
+			.mui-table-view-cell i{font-size: 22px;color: #FC7B03;margin-left: 8px;}
+			.mui-bar-footer{height: 130px;background: white;display: none;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">定制</h1>
+		</header>
+		<div class="mui-bar mui-bar-footer">
+			<div class="bbs-pulish-img mui-text-center">
+				<i class="mui-icon iconfont" style="font-size: 80px;color: #FC7B03;">&#xe65b;</i>
+				<div>长按录音</div>
+			</div>
+		</div>
+		<div class="mui-content">
+			<div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						停止充电<span style="float: right;"><i class="mui-icon iconfont">&#xe659;</i><i class="mui-icon iconfont ly">&#xe65b;</i></span>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						充电完成<span style="float: right;"><i class="mui-icon iconfont">&#xe659;</i><i class="mui-icon iconfont ly">&#xe65b;</i></span>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						照明<span style="float: right;"><i class="mui-icon iconfont">&#xe659;</i><i class="mui-icon iconfont ly">&#xe65b;</i></span>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						关闭照明<span style="float: right;"><i class="mui-icon iconfont">&#xe659;</i><i class="mui-icon iconfont ly">&#xe65b;</i></span>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						音乐蓝牙已连接<span style="float: right;"><i class="mui-icon iconfont">&#xe659;</i><i class="mui-icon iconfont ly">&#xe65b;</i></span>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						音乐蓝牙已断开<span style="float: right;"><i class="mui-icon iconfont">&#xe659;</i><i class="mui-icon iconfont ly">&#xe65b;</i></span>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						数据蓝牙已连接<span style="float: right;"><i class="mui-icon iconfont">&#xe659;</i><i class="mui-icon iconfont ly">&#xe65b;</i></span>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						数据蓝牙已断开<span style="float: right;"><i class="mui-icon iconfont">&#xe659;</i><i class="mui-icon iconfont ly">&#xe65b;</i></span>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						请注意安全<span style="float: right;"><i class="mui-icon iconfont">&#xe659;</i><i class="mui-icon iconfont ly">&#xe65b;</i></span>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						电量不足<span style="float: right;"><i class="mui-icon iconfont">&#xe659;</i><i class="mui-icon iconfont ly">&#xe65b;</i></span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/open.js" ></script>
+	<script type="text/javascript" src="../js/mui.js" ></script>
+	<script type="text/javascript" src="../js/jquery-2.1.4.min.js" ></script>
+	<script>
+		$(document).ready(function(){
+			$(".ly").click(function(){
+				$(".mui-bar-footer").show();
+			});
+			$(".mui-bar-footer").click(function(){
+				$(this).hide();
+			})
+		})
+			
+	</script>
+</html>

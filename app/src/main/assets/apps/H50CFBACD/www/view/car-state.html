@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>车身状态</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/fonts/iconfont.css" />
+		<style>
+			.mui-grid-view.mui-grid-9{background: white;}
+			.mui-grid-view.mui-grid-9 i{font-size: 35px;}
+			.mui-grid-view.mui-grid-9 p{color: #000000;margin: 10px 0 0 0;}
+			.mui-input-row{clear: none;}
+			/*radio大小*/
+			.mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before{
+				font-size: 20px;
+			}
+			.mui-checkbox input[type=checkbox], .mui-radio input[type=radio][type=radio]{
+				top:8px;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">车身状态</h1>
+		</header>
+		<div class="mui-content">
+			<div>
+				<ul class="mui-table-view mui-grid-view mui-grid-9">
+					<li class="mui-table-view-cell mui-col-xs-6">
+						<i class="mui-icon iconfont" style="color: #FF9E29;">&#xe653;</i>
+						<p>模拟控制器</p>
+					</li>
+					<li class="mui-table-view-cell mui-col-xs-6" onclick="openNewPage('today-road.html')">
+						<i class="mui-icon iconfont mui-blus">&#xe633;</i>
+						<p>我的路径</p>
+					</li>
+					<li class="mui-table-view-cell mui-col-xs-6" onclick="openNewPage('active-lz.html')">
+						<i class="mui-icon iconfont" style="color: #FFBFB7;">&#xe656;</i>
+						<p>动作录制</p>
+					</li>
+					<li class="mui-table-view-cell mui-col-xs-6" onclick="openNewPage('header-draw.html')">
+						<i class="mui-icon iconfont" style="color: #68C67A;">&#xe651;</i>
+						<p>随手画</p>
+					</li>
+					<li class="mui-table-view-cell mui-col-xs-6" onclick="openNewPage('fault-detectiom.html')">
+						<i class="mui-icon iconfont" style="color: #68C67A;">&#xe654;</i>
+						<p>故障检测</p>
+					</li>
+					<li class="mui-table-view-cell mui-col-xs-6" onclick="openNewPage('music.html')">
+						<i class="mui-icon iconfont" style="color: #AAA0ED;">&#xe657;</i>
+						<p>音乐定制</p>
+					</li>
+				</ul>
+			</div>
+			<div class="mui-content-padded">
+				<span>锁定车辆</span>
+			</div>
+			<div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<span>车辆</span>
+						<div class="mui-switch mui-switch-blue mui-switch-mini">
+							<div class="mui-switch-handle"></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="mui-content-padded">
+				<span>车辆语言</span>
+			</div>
+			<div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell" style="padding: 0 0 5px 0;">
+						<div style="padding-top: 6px">
+							<div class="mui-input-row mui-radio mui-left mui-pull-left">
+								<label>中文</label>
+								<input type="radio" name="radio1"/>
+							</div>
+							<div class="mui-input-row mui-radio mui-left mui-pull-left">
+								<label>Engish</label>
+								<input type="radio" name="radio1" />
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="mui-content-padded">
+				<span>灯光</span>
+			</div>
+			<div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<span>灯光开关</span>
+						<div class="mui-switch mui-switch-blue mui-switch-mini">
+							<div class="mui-switch-handle"></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="mui-content-padded">
+				<span>前后零点偏移</span>
+			</div>
+			<div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						 <div class="mui-input-range">
+				            <label style="float: right;padding-top: 8px;font-size: 20px;">30°</label>
+				            <input type="range" value="30" min="0" max="30" style="width: 85%;">
+				        </div>
+					</li>
+				</ul>
+			</div>
+			<div class="mui-content-padded">
+				<span>最大速度</span>
+			</div>
+			<div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						 <div class="mui-input-range">
+				            <label style="float: right;padding-top: 8px;font-size: 20px;">30km/h</label>
+				            <input type="range" value="30" min="0" max="30" style="width: 75%;" >
+				        </div>
+					</li>
+				</ul>
+			</div>
+			<div class="mui-content-padded">
+				<span>把手灵敏度</span>
+			</div>
+			<div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						 <div class="mui-input-range">
+				            <label style="float: right;padding-top: 8px;font-size: 20px;">10kg</label>
+				            <input type="range" value="10" min="0" max="10" style="width: 82%;" >
+				        </div>
+					</li>
+				</ul>
+			</div>
+			<div style="margin-top: 20px;">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<span>GPS开关</span>
+						<div class="mui-switch mui-switch-blue mui-switch-mini">
+							<div class="mui-switch-handle"></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="mui-content-padded">
+				<span>声音</span>
+			</div>
+			<div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						 <div class="mui-input-range">
+				            <label style="float: right;padding-top: 8px;font-size: 20px;">100%</label>
+				            <input type="range" value="100" min="0" max="100" style="width: 80%;" >
+				        </div>
+					</li>
+				</ul>
+			</div>
+			<div style="margin-top: 20px;">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<span>快捷键功能</span>
+						<div class="mui-switch mui-switch-blue mui-switch-mini">
+							<div class="mui-switch-handle"></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="mui-content-padded">
+				<span>选择电池容量</span>
+			</div>
+			<div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell" style="padding: 0 0 5px 0;">
+						<div style="padding-top: 6px">
+							<div class="mui-input-row mui-radio mui-left mui-pull-left">
+								<label>4A-h</label>
+								<input type="radio" name="radio1"/>
+							</div>
+							<div class="mui-input-row mui-radio mui-left mui-pull-left">
+								<label>6A-h</label>
+								<input type="radio" name="radio1" />
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div style="margin-top: 20px;">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" onclick="openNewPage('blus-password.html')">
+							<span>修改蓝牙密码</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="mui-content-padded">
+				<span>当前固件版本4.564.1</span>
+			</div>
+			<div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" onclick="openNewPage('ware-update1.html')">
+							<span>固件升级</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/mui.js" ></script>
+	<script type="text/javascript" src="../js/open.js" ></script>
+</html>

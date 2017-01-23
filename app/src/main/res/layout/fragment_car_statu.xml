@@ -1,0 +1,259 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background"
+            >
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="@color/title_back_car_statue">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:background="@mipmap/prev"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="车身状态"
+            android:textColor="@color/white"
+            android:textSize="19sp"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp">
+
+                    <LinearLayout
+                        android:id="@+id/path"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@mipmap/dingwei"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="我的路径"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/checkout_wrong"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@mipmap/guzhang"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="故障检测"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:text="最大速度"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp">
+
+                <SeekBar
+                    android:id="@+id/seekbar_speed"
+                    style="@style/Widget.AppCompat.SeekBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="9"
+                    android:max="30"
+                    android:progress="0"/>
+
+                <TextView
+                    android:id="@+id/text_speed"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_weight="2"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/button_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp">
+
+                <TextView
+                    android:id="@+id/text_handle"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="9"
+                    android:gravity="center_vertical"
+                    android:text="提手按键"/>
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/btn_handle"
+                    android:layout_width="0dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_weight="1.5"
+                    android:text="12"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/exp"
+                android:layout_width="match_parent"
+                android:layout_height="86dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:text="提手按键位于提手内侧,用于防止车轮离地时车轮飞转.启用时,按下按键车体进入待机状态,车轮静止,无法平衡.\n关闭时按键无作用"/>
+
+            <LinearLayout
+                android:id="@+id/checkout_car_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="9"
+                    android:gravity="center_vertical"
+                    android:text="车身校验"/>
+
+                <TextView
+                    android:id="@+id/checkout_car"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_weight="0.5"
+                    android:background="@mipmap/next"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="9"
+                    android:gravity="center_vertical"
+                    android:text="修改蓝牙密码"/>
+
+                <TextView
+                    android:id="@+id/repassword"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_weight="0.5"
+                    android:background="@mipmap/next"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:text="当前固件版本"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="9"
+                    android:gravity="center_vertical"
+                    android:text="固件升级"/>
+
+                <TextView
+                    android:id="@+id/updata"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_weight="0.5"
+                    android:background="@mipmap/next"
+                    android:gravity="center"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

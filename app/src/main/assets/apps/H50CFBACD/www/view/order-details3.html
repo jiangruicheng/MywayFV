@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>订单详情</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/fonts/iconfont.css" />
+		<style>
+			.mui-table-view .mui-media-object{max-width: 80px;height: 80px;}
+			.kong{margin-top: 4px;}
+			.mui-bar-footer{padding: 0px;}
+			.xx{background: #DC4949;color: white;}
+			.mui-bar .mui-btn{padding: 4px 12px;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">订单详情</h1>
+		</header>
+		<nav class="mui-bar mui-bar-footer">
+			<div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						合计：¥1500.00
+						<button type="button" class="mui-btn" style="right: 30%;" onclick="openNewPage('wuliu.html')">查看物流</button>
+						<button type="button" class="mui-btn xx">确认收货</button>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="mui-content">
+			<div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<i class="mui-icon iconfont">&#xe65c;</i><span>订单编号：4876487946178</span>
+					</li>
+				</ul>
+				<ul class="mui-table-view mui-grid-view">
+					<li class="mui-table-view-cell mui-col-xs-1">
+						<i class="mui-icon iconfont" style="font-size: 17px;">&#xe662;</i>
+					</li>
+					<li class="mui-table-view-cell mui-col-xs-11 mui-text-left">
+						<span>收货人：黄飞鸿</span><span style="float: right;">13192728080</span>
+						<p class="back" style="margin-top: 8px;">收货地址：广东省深圳市沙井中心卓越时代大厦5楼503</p>
+					</li>
+				</ul>
+				<ul class="mui-table-view kong">
+					<li class="mui-table-view-cell mui-media" onclick="openNewPage('goods-details.html')">
+						<img class="mui-media-object mui-pull-left" src="../public/img/28.jpg" />
+						<div class="mui-media-body">
+							<span class="font-14">小米9号平衡车</span>
+							<p style="margin-top: 10px;">
+								<span style="color: #DC4949;">¥1500.00</span>
+								<span style="float: right;">×1</span>
+							</p>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<p>
+							数量<span class="mui-pull-right">×1</span>
+						</p>
+						<p style="line-height: 50px;">
+							颜色<span class="mui-pull-right">白色</span>
+						</p>
+						<p>
+							备注：你好！
+						</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery-2.1.4.min.js" ></script>
+	<script type="text/javascript" src="../js/mui.js" ></script>
+	<script type="text/javascript" src="../js/open.js" ></script>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>修改资料</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/iconfont.css" />
+		<script src="../js/jquery-2.1.4.min.js" type="text/javascript"></script>
+		<script src="../js/mui.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../js/appconf.js" ></script>
+		<script type="text/javascript" src="../js/picshang.js" ></script>
+		<script type="text/javascript" src="../js/my-info1.js" ></script>
+		<style>
+			.mui-table-view .mui-media-object{max-width: 55px;height: 55px;border-radius: 100%;}
+			.kong{margin-top: 6px;}
+			.mui-input-row input{border: none;}
+			/*性别*/
+			.alert{position: fixed;top: 50%;left: 50%;width:250px;height:80px;margin-top:-40px;margin-left: -125px;z-index: 99;display: none;}
+			.alert-back{position: fixed;top: 0;left:0 ;bottom:0;right:0;background-color: #000000;opacity: 0.3;filter:alpha(opacity=30);display: none;}
+			.mui-radio input[type=radio]:checked:before {content: '\e442';color: #139f13;}
+			.mui-radio input[type=radio]:before{font-size: 24px;}
+			.mui-radio input[type=radio]{top: 6px;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">修改资料</h1>
+			<a class="mui-pull-right">
+				<h5 style="line-height: 33px;" id="bth">完成</h5>
+			</a>
+		</header>
+		<div class="mui-content">
+			<div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media">
+						<div id="userlogo">
+							<!--<a href="#tk" > -->
+								<img class="mui-media-object mui-pull-left userimg" id="userpic" src="../public/img/4.jpeg" cname="userpic"/>
+							<!--</a>-->
+						</div>
+						<div class="mui-media-body" style="line-height: 55px;padding-left: 10px;">
+							头像
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view kong">
+					<li class="mui-table-view-cell mui-input-row">
+						<span>用户名：</span>
+						<input placeholder="" class="usersni"/>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-input-row sex-chose">
+						<span>性别：</span>
+						<input placeholder="男" value="" class="sex"/>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-input-row">
+						<span>姓名：</span>
+						<input  placeholder="" class="namez"/>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-input-row">
+						<span>生日：</span>
+						<input  placeholder="" class="birthday" />
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-input-row">
+						<span>地区：</span>
+						<input placeholder=""  class="usersaddr"/>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-input-row">
+						<span>手机：</span>
+						<input placeholder=""  class="phone">
+					</li>
+				</ul>
+				<ul class="mui-table-view kong">
+					<li class="mui-table-view-cell mui-input-row">
+						<span>职业：</span>
+						<input placeholder="" class="zhiye"/>
+					</li>
+				</ul>
+				<ul class="mui-table-view"> 
+					<li class="mui-table-view-cell mui-input-row">
+						<span>邮箱：</span>
+						<input placeholder=""  class="usersemail"/>
+					</li>
+				</ul>
+			</div>
+			<!--性别-->
+			<div class="alert">
+				<div class="alert-content">
+					<form class="mui-input-group">
+						<div class="mui-input-row mui-radio">
+							<label class="mui-text-left">男</label>
+							<input name="radio1" type="radio" value="男" checked="">
+						</div>
+						<div class="mui-input-row mui-radio">
+							<label class="mui-text-left">女</label>
+							<input name="radio1" type="radio" value="女" >
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="alert-back"></div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/mui.js" ></script>
+	<script type="text/javascript" src="../js/open.js" ></script>
+	<script src="../js/jquery-2.1.4.min.js"></script>
+	<script>
+		$(".sex-chose").on("click",function(){
+			$(".alert").show()
+			$(".alert-back").show()
+		})
+		$('.alert input[type="radio"]').each(function(){
+			$(this).on("click",function(){
+				if($(this).is(":checked")){
+					if($(this).val()=="男"){
+						$(".sex").val($(this).val())
+					}else{
+						$(".sex").val($(this).val())
+					}
+				}
+				$('.alert').hide()
+				$(".alert-back").hide()
+			})
+		})
+		$(".alert-back").on("click",function(){
+			$('.alert').hide()
+			$(".alert-back").hide()
+		})
+	</script>
+</html>

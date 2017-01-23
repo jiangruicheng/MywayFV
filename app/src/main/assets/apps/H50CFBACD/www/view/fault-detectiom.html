@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>故障检测</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/fonts/iconfont.css" />
+		<link rel="stylesheet" href="../css/popup.css" />
+		<script>
+			
+		</script>
+		<style>
+			.my i{font-size: 25px;color: gray;margin-right: 5px;}
+			.x i{float: right;color: #5FB846;}
+			.x{display: none;}
+			.start,.over{display: none;}
+			.start img{max-width: 100px;height: 100px;border-radius: 100%;margin-right: 20px;}
+			.over img{max-width: 100px;height: 100px;border-radius: 100%;margin-right: 20px;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">故障检测</h1>
+			<a class="mui-icon mui-pull-right">
+				<h5 style="display: none;" class="scrz">上传日志</h5>
+			</a>
+		</header>
+		<div class="mui-content">
+			<div>
+				<ul class="mui-table-view mui-grid-view">
+					<li class="mui-table-view-cell mui-col-xs-4">
+						<div class="start">
+							<img src="../public/img/bg.gif" />
+						</div>
+						<div class="over">
+							<img src="../public/img/over.jpg" />
+						</div>
+						<div class="begin" style="border:  3px solid gainsboro;border-radius: 100%;max-width: 105px;height: 105px;">
+							<i id="xx" class="mui-icon iconfont xx" style="font-size: 30px;color: #5FB846;padding-top: 18px;">&#xe645;</i>
+							<p id="begin" class="back" style="margin-top: 10px;">开始检测</p>
+						</div>
+					</li>
+					<li class="mui-table-view-cell mui-col-xs-8 mui-text-left">
+						<p>检测故障可以帮助你及早发现爱车的问题，提交收货维修</p>
+					</li>
+				</ul>
+			</div>
+			<div class="my">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<i class="mui-icon iconfont">&#xe64b;</i>
+						<span>显示板</span>
+						<span class="x x1"><i class="mui-icon iconfont">&#xe64f;</i></span>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<i class="mui-icon iconfont">&#xe647;</i>
+						<span>驱动板</span>
+						<span class="x x2"><i class="mui-icon iconfont">&#xe64f;</i></span>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<i class="mui-icon iconfont">&#xe649;</i>
+						<span>电池</span>
+						<span class="x x3"><i class="mui-icon iconfont" style="color: #FF5353;">&#xe64d;</i></span>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<i class="mui-icon iconfont">&#xe64c;</i>
+						<span>电机</span>
+						<span class="x x4"><i class="mui-icon iconfont">&#xe64f;</i></span>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<i class="mui-icon iconfont">&#xe64a;</i>
+						<span>CAN总线</span>
+						<span class="x x5"><i class="mui-icon iconfont">&#xe64f;</i></span>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<i class="mui-icon iconfont">&#xe64e;</i>
+						<span>常规错误</span>
+						<span class="x x6"><i class="mui-icon iconfont">&#xe64f;</i></span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/mui.js" ></script>
+	<script type="text/javascript" src="../js/open.js" ></script>
+	<script type="text/javascript" src="../js/jquery-2.1.4.min.js" ></script>
+	<script type="text/javascript" src="../libs/jquery/jquery.js" ></script>
+	<script>
+		  $(".begin").click(function(){
+			$('.start').css('display','block');
+			$('.begin').css('display','none');
+		    $('.x1').fadeIn();
+		    setTimeout(function(){
+		    	console.log(2);
+			    $('.x2').fadeIn();
+			    setTimeout(function(){
+			    	console.log(3);
+				    $('.x3').fadeIn();
+				    setTimeout(function(){
+				    	console.log(4);
+				    	$('.x4').fadeIn();
+				    	setTimeout(function(){
+				    		console.log(5);
+				    		$('.x5').fadeIn();
+				    		setTimeout(function(){
+				    			console.log(6);
+				    			$('.x6').fadeIn();
+				    			setTimeout(function(){
+				    				console.log(7);
+				    				 $('.scrz').show();
+				    				 setTimeout(function(){
+				    				 	console.log(8);
+				    				 	$('.start').hide();
+				    				 	$('.over').show();
+				    				 },1000)
+				    			},1000)
+				    		},2000)
+				    	},2000)
+				    },2000)
+			    },2000)
+		    },2000)
+		  });
+    </script>
+</html>

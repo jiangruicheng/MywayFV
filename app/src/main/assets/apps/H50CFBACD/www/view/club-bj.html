@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>编辑俱乐部</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/fonts/iconfont.css" />
+		<link href="../css/mui.picker.css" rel="stylesheet" />
+		<link href="../css/mui.poppicker.css" rel="stylesheet" />
+		<script src="../js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="../js/appconf.js" ></script>
+        <script type="text/javascript" src="../js/picshang.js" ></script>
+        <script type="text/javascript" src="../js/club-bj.js" ></script>
+		<style>
+			.bbs-pulish-img{background: white;}
+			.bbs-pulish-img img{max-width: 55px;height: 55px;border-radius: 100%;margin-top: 35px;}
+			.mui-btn-blue, .mui-btn-primary, input[type=submit]{border: 1px solid #404040;background: #404040;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">编辑俱乐部</h1>
+			<a class="mui-pull-right">
+				<h5 style="line-height: 33px;" id="wanc">完成</h5>
+			</a>
+		</header>
+		<div class="mui-content">
+			<div>
+				<div class="bbs-pulish-img mui-text-center" id="clubimg">
+					<img class="userimg" id="userpic" src="../public/img/4.jpeg" cname="userpic"/>
+					<p class="back" style="line-height: 55px;margin-bottom: 0px;">俱乐部头像</p>
+				</div> 
+			</div>
+			<div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-input-row">
+						<span>俱乐部名称：</span>
+						<input placeholder="平衡车俱乐部" style="border: none;" id="clubname"/>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-input-row">
+						<a class="mui-navigate-right" id='showCityPicker'>
+							<span>所在地区：</span>
+							<input placeholder="广东省 深圳市" style="border: none;" class="ui-alert" id='cityResult' />
+						</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-input-row">
+						<span>俱乐部简介</span>
+						<textarea cols="" rows="5" id="clubtext" placeholder="" style="padding: 10px 0;border: none;"></textarea>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script src="../js/mui.js"></script>
+	<script type="text/javascript" src="../js/open.js" ></script>
+	<script src="../js/mui.picker.js"></script>
+	<script src="../js/mui.poppicker.js"></script>
+	<script src="../js/city.data.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		(function($, doc) {
+			$.init();
+			$.ready(function() {					
+				//-----------------------------------------
+				//					//级联示例
+				var cityPicker= new $.PopPicker({
+					layer: 2
+				});
+				cityPicker.setData(cityData);
+				var showCityPickerButton = doc.getElementById('showCityPicker');
+				var cityResult = doc.getElementById('cityResult');
+				showCityPickerButton.addEventListener('tap', function(event) {
+					cityPicker.show(function(items) {
+						cityResult.value = (items[0] || {}).text + " " + (items[1] || {}).text;
+						//返回 false 可以阻止选择框的关闭
+						//return false;
+					});
+				}, false);
+			});
+		})(mui, document);
+	</script>
+</html>

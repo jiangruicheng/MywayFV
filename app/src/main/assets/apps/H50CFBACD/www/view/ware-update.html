@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>固件升级</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<style>
+			.mui-table-view-cell p{color: #000000;line-height: 25px;font-size: 17px;}
+			.mui-content-padded button{padding: 8px;background: #FF9E29;color: white;margin-top: 30px;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">固件升级</h1>
+		</header>
+		<div class="mui-content">
+			<div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						当前固件版本：1.2.354
+					</li>
+				</ul>
+				<ul class="mui-table-view" style="margin-top: 4px;">
+					<li class="mui-table-view-cell">
+						最新固件版本：1.579764
+						<p style="color: #FF4830;line-height: 35px;">请按提手将车辆放倒进行固件更新</p>
+						<p>1.适配V5D</p>
+						<p>2.修复极限破解问题</p>
+						<p>3.减小小车骑行间隙感</p>
+						<p>4.提高V5F性能</p>
+					</li>
+				</ul>
+			</div>
+			<div class="mui-content-padded">
+				<p>更新固件时请保持连接手机与蓝牙连接信号良好；新完成需要重新连接才可继续使用。</p>
+				<button type="button" class="mui-btn mui-btn-block" onclick="openNewPage('ware-update1.html')">更新</button>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/mui.js" ></script>
+	<script type="text/javascript" src="../js/open.js" ></script>
+	<script type="text/javascript" src="../js/jquery-2.1.4.min.js" ></script>
+</html>

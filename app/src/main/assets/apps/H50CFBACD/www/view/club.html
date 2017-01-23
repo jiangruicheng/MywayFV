@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>俱乐部</title>
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../libs/mui/mui.css" />
+		<link rel="stylesheet" href="../libs/iconfont/fonts/iconfont.css" />
+		<script src="../js/jquery-2.1.4.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../js/appconf.js" ></script>
+		<script type="text/javascript" src="../js/club.js" ></script>
+		<style>
+			.mui-table-view .mui-media-object{max-width: 45px;height: 45px;border-radius: 100%;}
+			.mui-table-view-cell p{margin-top: 3px;}
+			.mui-bar-popover{
+				width: 45%;
+				height: 90px;
+				list-style: none;
+				text-align: center;
+				background: white;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">俱乐部</h1>
+			<a class="mui-pull-right" href="#jia">
+				<i class="mui-icon iconfont">&#xe622;</i>
+			</a>
+		</header>
+		<div class="mui-content">
+			<div id="jia" class="mui-popover mui-bar-popover">
+				<div class="mui-popover-arrow"></div>
+				<li class="mui-table-view-cell" onclick="openNewPage('club-create.html')"><i class="mui-icon iconfont" style="color: #FF6D5D;margin: 0 8px;">&#xe625;</i>创建俱乐部</li>
+				<li class="mui-table-view-cell" onclick="openNewPage('club-sousuo.html')"><i class="mui-icon iconfont" style="color: #FF6D5D;margin: 0 8px;">&#xe60c;</i>搜索俱乐部</li>
+			</div>
+			<div id="clublist">
+				<!--<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media" onclick="openNewPage('club-chat.html')">
+						<img class="mui-media-object mui-pull-left" src="../public/img/40.jpg" />
+						<div class="mui-media-body">
+							<span>平衡车俱乐部</span><span class="mui-pull-right font-12 gray"><i class="mui-icon iconfont" style="font-size: 11px;margin-right: 5px;">&#xe617;</i>深圳</span>
+							<p class="font-12">一起骑车出去玩吧！</p>
+						</div>
+					</li>
+				</ul>-->
+				<!--<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media" onclick="openNewPage('club-chat.html')">
+						<img class="mui-media-object mui-pull-left" src="../public/img/40.jpg" />
+						<div class="mui-media-body">
+							<span>平衡车俱乐部</span><span class="mui-pull-right font-12 gray"><i class="mui-icon iconfont" style="font-size: 11px;margin-right: 5px;">&#xe617;</i>深圳</span>
+							<p class="font-12">一起骑车出去玩吧！</p>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media" onclick="openNewPage('club-chat.html')">
+						<img class="mui-media-object mui-pull-left" src="../public/img/40.jpg" />
+						<div class="mui-media-body">
+							<span>平衡车俱乐部</span><span class="mui-pull-right font-12 gray"><i class="mui-icon iconfont" style="font-size: 11px;margin-right: 5px;">&#xe617;</i>深圳</span>
+							<p class="font-12">一起骑车出去玩吧！</p>
+						</div>
+					</li>
+				</ul>-->
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/open.js"></script>
+	<script type="text/javascript" src="../libs/mui/mui.js"></script>
+	<script type="text/javascript" src="../libs/jquery/jquery.js"></script>
+	<script>
+		$("#jia").click(function(){
+			$("#jia").hide();
+		})
+	</script>
+</html>
