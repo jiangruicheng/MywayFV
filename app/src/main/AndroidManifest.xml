@@ -207,7 +207,7 @@
     <!-- bugly -->
     <!--      android:name="io.dcloud.application.DCloudApplication" -->
     <application
-        android:name="io.dcloud.application.DCloudApplication"
+        android:name=".MywanAPP"
         android:allowBackup="true"
         android:allowClearUserData="true"
         android:icon="@mipmap/launcher"
@@ -265,7 +265,7 @@
             android:name=".hbuilder.SDK_WebApp"
             android:configChanges="orientation|keyboardHidden|screenSize|keyboard|navigation|mcc|mnc|fontScale"
             android:screenOrientation="user"
-            android:theme="@android:style/Theme.Translucent">
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
         </activity>
         <activity
             android:name=".hbuilder.SDK_WebView"

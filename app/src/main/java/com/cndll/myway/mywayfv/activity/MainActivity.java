@@ -54,6 +54,7 @@ public class MainActivity extends BaseActivity {
         startService(intent);
         //CrashReport.testJavaCrash();
         carFragment = new CarFragment();
+        //frame.setVisibility(View.GONE);
         webview.setVisibility(View.GONE);
         URLs = new ArrayList<>();
         URLs.add("file:///android_asset/apps/H50CFBACD/www/view/active.html");

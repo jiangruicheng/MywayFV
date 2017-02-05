@@ -6,9 +6,7 @@ import android.content.Context;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 
-import io.dcloud.RInformation;
 import io.dcloud.common.DHInterface.IApp;
 import io.dcloud.common.DHInterface.ICore;
 import io.dcloud.common.DHInterface.IOnCreateSplashView;
@@ -68,8 +66,6 @@ public class WebappModeListener implements ICore.ICoreStatusListener, IOnCreateS
                         // 设置排版不显示状态，避免显示webview时html内容排版错乱问题
                         View view = ((IWebview) pArgs).obtainApp().obtainWebAppRootView().obtainMainView();
                         view.setVisibility(View.INVISIBLE);
-                        https:
-//github.com/jiangruicheng/blelight.git
                         if (view.getParent() != null) {
                             ((ViewGroup) view.getParent()).removeView(view);
                         }
@@ -87,11 +83,11 @@ public class WebappModeListener implements ICore.ICoreStatusListener, IOnCreateS
                         break;
                     case IWebviewStateListener.ON_PAGE_FINISHED:
                         // WebApp首页面加载完成事件
-                        if (pd != null) {
+                        /*if (pd != null) {
                             pd.dismiss();
                             pd = null;
                         }
-                        app.obtainWebAppRootView().obtainMainView().setVisibility(View.VISIBLE);
+                        app.obtainWebAppRootView().obtainMainView().setVisibility(View.VISIBLE);*/
                         // 页面加载完毕，设置显示webview
                         // 如果不需要显示spalsh页面将此行代码移动至onCloseSplash事件内
                         Log.d("HBWEB", "onCallBack: " + app.obtainWebviewBaseUrl());
@@ -99,7 +95,7 @@ public class WebappModeListener implements ICore.ICoreStatusListener, IOnCreateS
                         // c.callback();
                         if (!isload) {
                             //获取栈顶点webview，加载指定页面
-                            SDK.obtainAllIWebview().get(SDK.obtainAllIWebview().size() - 1).loadUrl(app.obtainWebviewBaseUrl() + "view/found.html");
+                            //SDK.obtainAllIWebview().get(SDK.obtainAllIWebview().size() - 1).loadUrl(app.obtainWebviewBaseUrl() + "view/found.html");
                             isload = true;
                             //监听webview栈,如果有webview入栈，说明跳转至二级页面，隐藏底部导航栏.
                             new Thread() {
@@ -194,14 +190,19 @@ public class WebappModeListener implements ICore.ICoreStatusListener, IOnCreateS
 
     @Override
     public Object onCreateSplash(Context pContextWrapper) {
-        splashView = new FrameLayout(activity);
+        /*splashView = new FrameLayout(activity);
         splashView.setBackgroundResource(RInformation.DRAWABLE_SPLASH);
-        rootView.addView(splashView);
+        rootView.addView(splashView);*/
         return null;
     }
 
     @Override
     public void onCloseSplash() {
-        rootView.removeView(splashView);
+      //  rootView.removeView(splashView);
+        if (pd != null) {
+            pd.dismiss();
+            pd = null;
+        }
+        app.obtainWebAppRootView().obtainMainView().setVisibility(View.VISIBLE);
     }
 }
