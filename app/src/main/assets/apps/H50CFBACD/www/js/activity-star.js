@@ -1,5 +1,6 @@
+var userid;
 document.addEventListener('plusready',function(){
-	var userid = plus.storage.getItem('userid');//用户id
+	 userid = plus.storage.getItem('userid');//用户id
 	var ws = plus.webview.currentWebview();
 	$('.userimg').on('click',function(){ 
 		type = $(this).attr('cname');//区分照片
@@ -24,13 +25,18 @@ document.addEventListener('plusready',function(){
 	})
 	
 	$('#fabu').on('click',function(){
-		var acticityimg = plus.storage.getItem('userpic');
+		var acticityimg = plus.storage.getItem('type');
 		var activityname = $('#activityname').val();
 		var activityaddr = $('#activityaddr').val();
 		var kstime = $('#kstime').val();
 		var overtime = $('#overtime').val();
 		var activityress = $('#activityress').val();
-		
+		if(!userid){
+			toast('请先登录！');return;
+		}
+		if(!acticityimg||!activityname||!activityaddr||!activityress){
+		 toast('请完善内容！');return;	
+		}
 		if(kstime > overtime) {
 			toast('请输入正确的时间');return;
 		}
@@ -50,6 +56,7 @@ document.addEventListener('plusready',function(){
 			dataType:'json',
 			success:function(data){
 				plus.nativeUI.closeWaiting();
+				plus.storage.setItem('type','');
 				toast('发布成功');
 				setTimeout(function(){ 
 					ws.close();

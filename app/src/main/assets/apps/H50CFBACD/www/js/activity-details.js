@@ -27,9 +27,14 @@ document.addEventListener('plusready',function(){
 			    $('#punl').text(data.rea);
 				$('#joins').text(data.req); 
 				$.each(data.rew,function(k1,v1){
-					
+					var img;
+					if(!v1.users.userspic){
+						img='../public/img/1.jpg';
+					}else{
+						img=getAvatar(v1.users.userspic);
+					}
 					xhtml += '<li class="mui-media mui-table-view-cell"> '+
-							 '<img class="mui-media-object mui-pull-left" src="'+getAvatar(v1.users.userspic)+'" />'+
+							 '<img class="mui-media-object mui-pull-left" src="'+img+'" />'+
 							 '<div class="mui-media-body">'+
 							 '<span>'+v1.users.usersni+'</span><i class="mui-icon iconfont mui-yellow" style="margin-left: 6px;font-size: 14px;">&#xe605;</i>'+
 							 '<p style="color: #000000;font-size: 12px;">'+v1.usertime+'</p>'+ 

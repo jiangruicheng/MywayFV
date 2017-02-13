@@ -64,13 +64,7 @@ function btnMoney(id){
 		return false;
 	}
 }
-function a(){
-main = plus.android.runtimeMainActivity();
-var Intent = plus.android.importClass('android.content.Intent');
-var connActivity = plus.android.importClass("com.cndll.myway.hbuildertest.activity.ConnectBleActivity");
-var  intent = new Intent(main,connActivity.class);
-main.startActivity(intent);
-}
+
 
 
 

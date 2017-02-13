@@ -1,7 +1,7 @@
 document.addEventListener('plusready',function(){
 	var map = new BMap.Map("allmap");
 	var geolocation = new BMap.Geolocation();
-	geolocation.getCurrentPosition(function(r){
+	 geolocation.getCurrentPosition(function(r){
 		if(this.getStatus() == BMAP_STATUS_SUCCESS){
 //			var cur_city = r.address.city;//获取当前城市
 			var jingdu = r.point.lng;//经度

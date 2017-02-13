@@ -1,6 +1,7 @@
 document.addEventListener('plusready',function(){
    var ws = plus.webview.currentWebview();
    var userid = plus.storage.getItem('userid');
+   PullToRefresh(ws)
    var html = "";
    $.ajax({
    	type:"get",

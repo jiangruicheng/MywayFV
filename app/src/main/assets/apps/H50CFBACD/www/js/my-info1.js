@@ -50,28 +50,7 @@ document.addEventListener('plusready',function(){
     	  
     });
     
-    
-    $('.birthday').blur(function(){
-    	var birthday=$(this).val();
-    	if(!birthday.match(a)){
-			plus.nativeUI.toast('请输入正确的日期!');
-			return;
-		}
-    })
-    $('.usersemail').blur(function(){
-    	var useremail=$(this).val();
-    	if(!useremail.match(ema)){
-			plus.nativeUI.toast('请输入正确的邮箱!');
-			return;
-		}
-    })
-    $('.phone').blur(function(){
-    	var phone=$(this).val();
-    	if(!phone.match(p1)){
-			plus.nativeUI.toast('请输入正确的手机号!');
-			return;
-		}
-    })
+ 
     $('#bth').on('click',function(){
     	
     	var userpic = plus.storage.getItem('userpic');
@@ -91,7 +70,7 @@ document.addEventListener('plusready',function(){
 			return;
 		}
 		if(!birthday.match(a)){
-			plus.nativeUI.toast('请输入正确的日期!');
+			plus.nativeUI.toast('请输入正确的日期!格式:年-月-日');
 			return;
 		}
 		if(!useremail.match(ema)){

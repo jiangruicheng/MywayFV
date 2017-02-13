@@ -11,14 +11,15 @@ document.addEventListener('plusready',function(){
 		}, 
 		dataType:'json',
 		success:function(data){
-//			console.log(JSON.stringify(data));
+			console.log(JSON.stringify(data));
 			if(data.res){
+//				html+='<img  style="position: relative;left: -25px;top: 0px;width: 20px;height: 20px;" src="../public/img/VIP1.png">';
 				if(!data.res.userspic){
 					html += '<img class="mui-media-object mui-pull-left" src="../public/img/4.jpeg" onclick=usersdata('+data.res.id+') />';
 				}else{
 					html += '<img class="mui-media-object mui-pull-left" src="'+getAvatar(data.res.userspic)+'" onclick=usersdata('+data.res.id+')  />';
 				}
-				
+				    
 					html += '<div class="mui-media-body" style="padding-left: 5px;">';
 				if(!data.res.usersni){
 					html += '<span style="line-height: 33px;">'+data.res.title+'<i class="mui-icon iconfont mui-red" style="font-size: 11px;margin-left: 6px;">';
@@ -32,6 +33,10 @@ document.addEventListener('plusready',function(){
 				}
 	  			html += '<p style="color: #000000;"><i class="mui-icon iconfont" style="color: #ff6700;font-size: 14px;">&#xe61a;</i><span style="margin: 0 10px;"><a onclick=driver("'+data.res.id+'") style="color: #000000;">'+data.rew.drivername+'</a></span>'+
 						'<i class="mui-icon iconfont" style="color: #F0AD4E">&#xe663;</i><span>'+data.res.usersmoney+'</span></p></div>';
+			   
+			    if(data.rex.code==1001){
+			   	 html+='<img style="position: relative;left: -26px;top: -16px;width: 20px;height: 20px;" src="../public/img/VIP1.png">';
+			    }
 			}else{
 				html += '<img class="mui-media-object mui-pull-left" src="../public/img/4.jpeg" onclick=login() /><p class="back font10" style="margin-top: 1.1em;"><span>您还未登录！</span></p>';
 			}

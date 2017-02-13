@@ -42,7 +42,7 @@ function workList(datalist){
 //			};  
 		  		html += '<ul class="mui-table-view">'+
 						'<li class="mui-table-view-cell mui-media" onclick=clubchat("'+v.id+'","'+v.name+'","'+v.userid+'")>'+
-						'<img class="mui-media-object mui-pull-left" src="'+webRoot+v.avatar+'" />'+
+						'<img class="mui-media-object mui-pull-left" src="'+getAvatar(v.avatar)+'" />'+
 						'<div class="mui-media-body">'+
 						'<span>'+v.name+'</span><span class="mui-pull-right font-12 gray"><i class="mui-icon iconfont" style="font-size: 11px;margin-right: 5px;">&#xe617;</i>'+v.info+'</span>'+
 						'<p class="font-12">'+v.address+'</p><p>成员:'+v.count+'</p>'+

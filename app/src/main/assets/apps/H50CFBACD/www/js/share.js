@@ -3,6 +3,7 @@ var shares=null,bhref=false;
 var Intent=null,File=null,Uri=null,main=null;
 if(window.plus){
 	plusReady();
+	
 }else{
 	document.addEventListener("plusready",plusReady,false);
 }
@@ -72,5 +73,7 @@ $('.mui-backdrop').remove();
 //		console.log(JSON.stringify(e));
 		plus.nativeUI.toast( "分享失败" ); 
 		$('#Popover_0').hide();
+		$('#zz').css('display','none')
+		$('#room-share').css({'display':'none','opacity':0})
 	});
 }

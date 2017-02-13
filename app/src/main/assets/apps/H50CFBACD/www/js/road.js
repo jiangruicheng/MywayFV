@@ -1,6 +1,6 @@
 document.addEventListener('plusready',function(){
    var ws = plus.webview.currentWebview();
-   var html="";
+   var html;
     $.ajax({
     	type:"get",
     	url:apiRoot+"/home/Road/road", 

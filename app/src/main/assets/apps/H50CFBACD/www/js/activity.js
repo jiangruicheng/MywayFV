@@ -33,6 +33,10 @@ function activitydetails(id){
 }
 function join(id){
 	var userid = plus.storage.getItem('userid');
+	if(!userid){
+		plus.nativeUI.toast('请先登录')
+		return;
+	}
 	$.ajax({ 
 		type:"get",
 	   	url:apiRoot+"/home/activity/activityjson",

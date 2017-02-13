@@ -12,14 +12,11 @@ document.addEventListener('plusready',function(){
    	 dataType:'json',
    	 success:function(data){
    	 	console.log(JSON.stringify(data));
-
-   	 		
-   	 	
    	 	$.each(data, function(k,v) {   
    	 		if(v.res!=null){
    	 		html += '<ul class="mui-table-view">'+
 				'<li class="mui-table-view-cell mui-media" onclick=clubchat("'+v.res.id+'","'+v.res.userid+'","'+v.res.name+'")>'+
-				'<img class="mui-media-object mui-pull-left" src="'+webRoot+v.res.avatar+'" />'+
+				'<img class="mui-media-object mui-pull-left" src="'+getAvatar(v.res.avatar)+'" />'+
 				'<div class="mui-media-body">'+
 				'<span>'+v.res.name+'</span><span class="mui-pull-right font-12 gray"><i class="mui-icon iconfont" style="font-size: 11px;margin-right: 5px;">&#xe617;</i>'+v.res.info+'</span>'+
 				'<p class="font-12">'+v.res.address+'</p>'+

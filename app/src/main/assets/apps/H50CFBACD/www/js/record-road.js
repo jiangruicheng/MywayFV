@@ -46,13 +46,6 @@ document.addEventListener('plusready',function(){
 			console.log('failed'+this.getStatus());  
 		}        
 	},{enableHighAccuracy: true})
-//setInterval(function(){
-//	dynamicLine('113.'+getRandom(828389),'22.'+getRandom(745981))
-//},1000);//动态生成新的点。
-
-
-	
-	
 //	当点击开始的时候
 $('.btn1').click(function(){
 //		map.removeOverlay(polyline);
@@ -70,8 +63,8 @@ $('.btn1').click(function(){
 //		gl=setInterval(getDistance,88000);//1.8分钟
 //		;//1.8分钟
         tim=setInterval(function(){
-        	var geolocation = new BMap.Geolocation();
-	geolocation.getCurrentPosition(function(r){
+        var geolocation = new BMap.Geolocation();
+	    geolocation.getCurrentPosition(function(r){
 		if(this.getStatus() == BMAP_STATUS_SUCCESS){
 		    var lng = r.point.lng;
 			var lat = r.point.lat;
@@ -146,8 +139,9 @@ $('.btn1').click(function(){
 		
 		$('.btn5').on('click',function(){
 			console.log(picc);
+			var  lc=$('.gongli').text();
 //			plus.webview.create('./record-road2.html','record-road2.html',{},{roadpic : picc}).show('pop-in',200);
-			plus.webview.create('./perfect-infor.html','perfect-infor.html',{},{roadpic : picc}).show('pop-in',200);
+			plus.webview.create('./perfect-infor.html','perfect-infor.html',{},{roadpic : picc,lc:lc}).show('pop-in',200);
        })
 		
 	

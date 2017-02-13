@@ -33,7 +33,7 @@ document.addEventListener('plusready',function(){
 			plus.nativeUI.toast('没有车辆相关信息')
 			return;
 		}
-		if(serialnumber.length!=12&&xlh.match(serialnumber)){
+		if(serialnumber.length!=12||!serialnumber.match(xlh)){
 			plus.nativeUI.toast('请输入正确的12位系列号')
 			return;
 		}

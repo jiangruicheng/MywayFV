@@ -204,8 +204,8 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.READ_LOGS"/>
 
-    <!-- bugly -->
-    <!--      android:name="io.dcloud.application.DCloudApplication" -->
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/> <!-- bugly -->
+    <!-- android:name="io.dcloud.application.DCloudApplication" -->
     <application
         android:name=".MywanAPP"
         android:allowBackup="true"
@@ -218,11 +218,6 @@
         <activity
             android:name=".activity.MainActivity"
             android:launchMode="singleTask">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity
             android:name=".hbuilder.ActivityEntry"
@@ -346,7 +341,7 @@
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
 
-                <data android:scheme="%appid%"/>
+                <data android:scheme="1105699907"/>
             </intent-filter>
         </activity>
         <activity
@@ -647,6 +642,13 @@
 
         <!-- 小米推送 end -->
         <activity android:name=".activity.PathActivity">
+        </activity>
+        <activity android:name=".activity.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
     </application>
 

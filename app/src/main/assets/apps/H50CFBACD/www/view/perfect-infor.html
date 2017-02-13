@@ -15,11 +15,12 @@
 			.mui-bar-nav{box-shadow:none;}
 			.my .mui-table-view-cell{height: 200px;background: url(../public/img/63.jpg);background-size: cover;}
 			.my .mui-media-object{max-width: 45px;height: 45px;border-radius: 100%;position: absolute;bottom: 15px;}
-			.my1 .mui-table-view-cell p{font-size: 14px;}
+			.my1 .mui-table-view-cell p{font-size: 14px;height: 20px;}
 			.kong{margin-top: 5px;}
 			.mui-table-view-cell input{border: none;font-size: 14px;}
 			.yans{color: #000000;}
 		   /* .iconfont map{color: #C0C0C0;}*/
+		   #end,#origin{padding: 0px 0px 0px 10px; margin: 0px;width: 80%;}
 		</style>
 	</head>
 	<body>
@@ -61,17 +62,17 @@
 					</li>
 					<li class="mui-table-view-cell mui-col-xs-6 mui-text-left">
 						<P>
-						<span class="yans">里程：</span><input id ="mileage" placeholder="请输入" style="width: 40%;font-size: 14px;border: none;" />
+						<span class="yans">里程：</span><input id ="mileage" placeholder="" style="width: 40%;font-size: 14px;border: none;" />
 						</P>
 						<p><span class="yans">续航要求：</span>
-							<input id="xuhang" placeholder="请输入" style="width: 40%;font-size: 14px;border: none;" />
+							<input  id="xuhang" type="text" placeholder="请输入" style="height: 20px;width: 50%;font-size: 14px;border: none;margin-left: -10px ;padding: 0px;" />
 						</p>
 					</li>
 				</ul>
 				<ul class="mui-table-view kong">
 					<li class="mui-table-view-cell mui-input-row">
 						<span>线路简介</span>
-						<input type="text" style="margin-bottom: 0px;padding: 10px 0;" placeholder="请输入...."  id="body"/>
+						<input type="text" style="width: 75%;margin-bottom: 0px;padding: 10px 0;" placeholder="请输入...."  id="body"/>
 					</li>
 				</ul>
 				<div class="kong" id="roadpic">
@@ -79,10 +80,10 @@
 				</div>
 				<ul class="mui-table-view kong">
 					<li class="mui-table-view-cell mui-input-row">
-						<span>起点:</span><input id="origin" placeholder="请输入...."/>
+						<span>起点:</span><input type="text"  id="origin" placeholder="请输入...."/>
 					</li>
 					<li class="mui-table-view-cell mui-input-row">
-						<span>终点:</span><input id="end" placeholder="请输入...."/>
+						<span>终点:</span><input type="text"   id="end" placeholder="请输入...."/>
 					</li>
 				</ul> 
 				<div class="pulish-img"><p id="showimg"></p></div>

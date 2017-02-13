@@ -17,8 +17,6 @@ import com.cndll.myway.mywayfv.RXbus.RxBus;
 import com.cndll.myway.mywayfv.data.CarStatu;
 import com.cndll.myway.mywayfv.eventtype.DisBleConn;
 import com.cndll.myway.mywayfv.fragment.CarFragment;
-import com.cndll.myway.mywayfv.hbuilder.WebappModeListener;
-import com.tencent.bugly.crashreport.CrashReport;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +45,9 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        CrashReport.initCrashReport(getApplicationContext(), "7637940377", true);
+        if (mEntryProxy == null) {
+            mEntryProxy = EntryProxy.getInstnace();
+        }
         setContentView(R.layout.activity_main);
         unbinder = ButterKnife.bind(this);
         final Intent intent = new Intent(this, BleService.class);
@@ -61,41 +61,37 @@ public class MainActivity extends BaseActivity {
         URLs.add("file:///android_asset/apps/H50CFBACD/www/view/found.html");
         URLs.add("file:///android_asset/apps/H50CFBACD/www/view/road.html");
         URLs.add("file:///android_asset/apps/H50CFBACD/www/view/my.html");
-
+        new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                while (true) {
+                    try {
+                        sleep(200);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    if (SDK.obtainAllIWebview().size() > 1) {
+                        bottomNavigation.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                bottomNavigation.setVisibility(View.GONE);
+                            }
+                        });
+                    } else if (SDK.obtainAllIWebview().size() == 1) {
+                        bottomNavigation.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                bottomNavigation.setVisibility(View.VISIBLE);
+                            }
+                        });
+                    }
+                }
+            }
+        }.start();
         initnavigation();
         getSupportFragmentManager().beginTransaction().replace(R.id.frame, carFragment).commit();
-        if (mEntryProxy == null) {
-            // 创建5+内核运行事件监听
-            // WebviewModeListener wm = new WebviewModeListener(this, webview);
 
-            WebappModeListener wm = new WebappModeListener(this, webview, new WebappModeListener.callback() {
-
-                @Override
-                public void hidenag() {
-                    bottomNavigation.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            bottomNavigation.setVisibility(View.GONE);
-                        }
-                    });
-                }
-
-                @Override
-                public void shownag() {
-                    bottomNavigation.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            bottomNavigation.setVisibility(View.VISIBLE);
-                        }
-                    });
-                }
-            });
-
-            // 初始化5+内核
-            mEntryProxy = EntryProxy.init(this, wm);
-            // 启动5+内核
-            mEntryProxy.onCreate(this, savedInstanceState, SDK.IntegratedMode.WEBAPP, null);
-        }
     }
 
     private void initnavigation() {
@@ -260,6 +256,7 @@ public class MainActivity extends BaseActivity {
         mEntryProxy.destroy(this);
         super.onDestroy();
         unbinder.unbind();
+        SDK.stopWebApp(SDK.obtainCurrentApp());
         RxBus.getDefault().post(new DisBleConn());
         System.exit(0);
     }

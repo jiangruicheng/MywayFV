@@ -18,8 +18,9 @@ document.addEventListener('plusready',function(){
 				$('#username').text(data.ree.usersni);
 				$('#dengji').text(data.req);
 				$('#money').text(data.ree.usersmoney);
-				
+				$('.dz').text(data.ree.usersaddr)
 				$('#chat').on('tap',function () {
+					if(!userid){ plus.nativeUI.toast('请先登录!'); return; }
 					plus.webview.create('club-chat.html','club-chat.html',{},{fid:sid,ftype:0,fname:data.ree.usersni}).show('pop-in');
 				})
 				
@@ -86,7 +87,7 @@ document.addEventListener('plusready',function(){
 				html+='</div></div><div class="mui-card-footer">'+
 					'<button type="button" class="mui-btn"><i class="mui-icon iconfont">&#xe664;</i>赞</button>'+
 					'<button type="button" class="mui-btn" onclick="activedetails(\''+v.id+'\',\''+v.addtime+'\')"><i class="mui-icon iconfont">&#xe665;</i>评论</button>'+
-					'<button type="button" onclick="tshare(\''+v.id+'\')" class="mui-btn mui-pull-right"><a  href="#room-share" ><i class="mui-icon iconfont">&#xe666;</i>转发</a></button>'+
+					'<button type="button" onclick="tshare(\''+v.id+'\')" class="mui-btn mui-pull-right"><a><i class="mui-icon iconfont">&#xe666;</i>转发</a></button>'+
 					'</div></div>';
 					
 				});
@@ -98,8 +99,14 @@ document.addEventListener('plusready',function(){
 		
 	}
 	
+ 	
+   	$('#zz').on('click',function(){
+   		$(this).css('display','none');
+   		$('#room-share').css({'display':'none','opacity':0});
+   	})
 	
 })
+
 function activedetails(id ,adtime, name ,pic){
 	
 	plus.webview.create('./active-details.html','active-details.html',{},{did : id,adtime : adtime,name : name ,pic : pic}).show('pop-in',200);
@@ -110,5 +117,7 @@ function tshare(id){
 		  toast('请登入!');
     	return ;
 	}
+	$('#zz').css('display','block')
+	$('#room-share').css({'display':'block','opacity':1})
 	plus.storage.setItem('sid',id); 
 }

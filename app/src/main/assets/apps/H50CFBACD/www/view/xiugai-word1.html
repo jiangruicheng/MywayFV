@@ -6,6 +6,8 @@
 		<link rel="stylesheet" href="../libs/mui/mui.css" />
 		<link rel="stylesheet" href="../css/main.css" />
 		<link rel="stylesheet" href="../libs/iconfont/fonts/iconfont.css" />
+		<script type="text/javascript" src="../js/appconf.js"></script>
+		<script src="../js/jquery-2.1.4.min.js" type="text/javascript"></script>
 		<style>
 			.mui-table-view-cell{padding: 5px 0;}
 			.mui-bar-nav~.mui-content {padding-top: 60px;}
@@ -26,7 +28,7 @@
 					<div class="mui-table-view-cell">
 						<div class="mui-input-row">
 							<label>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</label>
-							<input type="password" placeholder="请输入密码"/>
+							<input type="password" id='pas' placeholder="请输入密码"/>
 						</div>	
 					</div>					
 				</div>	
@@ -34,16 +36,68 @@
 					<div class="mui-table-view-cell">
 						<div class="mui-input-row">
 							<label>再次输入</label>
-							<input type="password" placeholder="请再次输入"/>
+							<input type="password" id='pass' placeholder="请再次输入"/>
 						</div>	
 					</div>					
 				</div>	
 				<div class="res_pasw">
-					<button type="button" onclick="openNewPage('login.html')">完成</button>
+					<button type="button" id='button' onclick="openNewPage('login.html')">完成</button>
 				</div>
 			</form>	
 		</div>
 		<script type="text/javascript" src="../libs/mui/mui.js"></script>
 		<script type="text/javascript" src="../js/open.js"></script>
+		<script>
+			 document.addEventListener('plusready', function() {
+                  var ws=plus.webview.currentWebview();
+                   
+                   $('#button').on('tap',function(){
+                   	 var min=$('#pas').val();
+                     var pas=$('#pas').val();
+                    if(min!=pas){
+                   	  plus.nativeUI.toast('两次密码不一致')
+                   	  return;
+                     }
+                    $.getJSON(apiRoot+'/home/user/phonetion',{phone:ws.phone,passeord:pas},function(data){
+                    	    if(data.code==1001){
+                    	     plus.storage.setItem('userid','')
+                    	     plus.webview.create('./login.html','login.html',{}).show('pop-in',200);	
+                    	    }
+                    	    if(data.code==1002){
+                    	     plus.nativeUI.toast('密码更新失败')
+                    	    }
+                    })
+                    
+                    
+                   })
+                  
+//				$('#getdx').on('click', function() {
+//					getcheck()
+//				})
+//				$('#xy').on('click', function() {
+//					var userid=plus.storage.getItem('userid')
+//					var phone = $('#phone').val();
+//					var word = $('#word').val();
+//					if(!phone.match(p1)){
+//						plus.nativeUI.toast('请输入正确手机号')
+//						return;
+//					}
+//					if(!phone || !word) {
+//                   plus.nativeUI.toast('验证码不能为空')
+//						return;
+//					}
+//					
+//					$.getJSON(apiRoot+'/home/user/verification',{w:word},function(data){
+//						  if(data.code==1001){
+//						  	 plus.webview.create('./xiugai-word1.html','xiugai-word1.html',{},{phone:phone}).show('pop-in',200);
+//						  }else if(data.code==1002){
+//						  	plus.nativeUI.toast('验证码')
+//						  }
+//					})
+//					
+//				})
+
+			}, false)
+		</script>
 	</body>
 </html>

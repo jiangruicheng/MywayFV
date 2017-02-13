@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title>我的设置</title>
@@ -7,9 +8,12 @@
 		<link rel="stylesheet" href="../libs/mui/mui.css" />
 		<link rel="stylesheet" href="../libs/iconfont/fonts/iconfont.css" />
 		<style>
-			.kong{margin-top: 4px;}
+			.kong {
+				margin-top: 4px;
+			}
 		</style>
 	</head>
+
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
@@ -55,59 +59,50 @@
 			</div>
 		</div>
 	</body>
-	<script type="text/javascript" src="../js/jquery-2.1.4.min.js" ></script>
-	<script type="text/javascript" src="../js/mui.js" ></script>
-	<script type="text/javascript" src="../js/open.js" ></script>
+	<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="../js/mui.js"></script>
+	<script type="text/javascript" src="../js/open.js"></script>
 	<script type="text/javascript">
-	var auths=[];
-	  document.addEventListener( "plusready", function(){
-	// 扩展API加载完毕，现在可以正常调用扩展API
-			plus.oauth.getServices(function(data){
-		      for(var i in data){
-			   var service = data[i];    
-			   auths[service.id] = service;
-		      }
-	         } , function(e){
-		    toast('获取第三方登录失败!');
-	       })
-	    $('.out').on('click',function(){
-			var userid=plus.storage.getItem('userid');
-			$.getJSON('http://app229.51edn.com/api/index.php/home/user/out',{userid:userid},function(data){
-				  
-				   if(data.code==1001){
-				    	authLogout(data.cont);
-				   }
-				   if(data.code==1002){
-				   	nwaiting()
-				   }
+		var auths;
+		document.addEventListener("plusready", function() {
+			// 扩展API加载完毕，现在可以正常调用扩展API
+			plus.oauth.getServices(function(service) {
+				auths = service;
+			}, function(e) {
+				toast('获取第三方登录失败!');
 			})
+			$('.out').on('click', function() {
+				
+				authLogout()
+				nwaiting()
+			})
+		}, false);
 
-		})
-	  }, false);
-	    
-	    function authLogout(id){
-				var s = auths[id];
-				if ( s.authResult ) {
-					s.logout(function(e){
-						nwaiting();
-					}, function(e){
-						plus.nativeUI.toast( "注销失败！" );
+		function authLogout() {
+			for(var i in auths) {
+				var s = auths[i];
+				if(s.authResult) {
+					s.logout(function(e) {
+//						alert("注销登录认证成功！");
+					}, function(e) {
+//						alert("注销登录认证失败！");
 					});
-				}else{
-				   nwaiting();
 				}
-			  
-        }
-		
-		function nwaiting(){
-		    plus.storage.setItem('userid','');
-			var nwaiting = plus.nativeUI.showWaiting();//显示原生等待框
-			var webviewContent= plus.webview.create('./login.html','login.html',{},{fid:1});//后台创建webview并打开show.html
-				webviewContent.addEventListener("loaded", function() { //注册新webview的载入完成事件
+			}
+		}
+
+		function nwaiting() {
+			plus.storage.setItem('userid', '');
+			var nwaiting = plus.nativeUI.showWaiting(); //显示原生等待框
+			var webviewContent = plus.webview.create('./login.html', 'login.html', {}, {
+				fid: 1
+			}); //后台创建webview并打开show.html
+			webviewContent.addEventListener("loaded", function() { //注册新webview的载入完成事件
 				nwaiting.close(); //新webview的载入完毕后关闭等待框
-				plus.storage.clear();//清除所有本地存储
-				webviewContent.show("slide-in-right",20); //把新webview窗体显示出来，显示动画效果为速度200毫秒的右侧移入动画
+				plus.storage.clear(); //清除所有本地存储
+				webviewContent.show("slide-in-right", 20); //把新webview窗体显示出来，显示动画效果为速度200毫秒的右侧移入动画
 			}, false);
 		}
 	</script>
+
 </html>

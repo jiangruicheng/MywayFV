@@ -83,7 +83,7 @@ function checkTv(tv){
 	var tv_id=tv;
      var index= tv_id.indexOf("."); //得到"."在第几位
      tv_id=tv_id.substring(index); //截断"."之前的，得到后缀
-     if(tv_id!=".jpg"&&tv_id!=".png"&&tv_id!=".git"&&tv_id!=".jpeg"){ //根据后缀，判断是否符合视频格式
+     if(tv_id!=".jpg"&&tv_id!=".png"&&tv_id!=".git"&&tv_id!=".jpeg"&&tv_id != ".JPG" && tv_id != ".PNG" && tv_id != ".GIF" && tv_id != ".JPEG"){ //根据后缀，判断是否符合视频格式
          var  v=tv.split(":");
         return   '<video width="100%" height="200" controls="controls"  poster="http://app229.51edn.com'+v[1]+'">'+
 				'<source src="http://app229.51edn.com'+ v[0] +'" type="video/mp4"></source></video>';

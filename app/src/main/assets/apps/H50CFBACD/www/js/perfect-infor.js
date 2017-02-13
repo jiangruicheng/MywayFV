@@ -1,6 +1,7 @@
 document.addEventListener('plusready',function(){
 	var ws = plus.webview.currentWebview();
 	var roadpic = ws.roadpic;
+	$('#mileage').val(ws.lc);
 	//alert(roadpic)
 	var userid = plus.storage.getItem('userid');
 	var usersni = plus.storage.getItem('usersni');
@@ -89,7 +90,10 @@ document.addEventListener('plusready',function(){
 			return;
 		}
 
-		
+        if(upload_pic.length<1){
+        	toast('至少添加一张照片！');
+			return;
+        }
 		plus.nativeUI.showWaiting('正在上传，请稍后...');
 		console.log(JSON.stringify(upload_pic));
 		if(upload_pic.length >= 1){

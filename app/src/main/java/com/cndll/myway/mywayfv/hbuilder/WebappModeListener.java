@@ -95,27 +95,10 @@ public class WebappModeListener implements ICore.ICoreStatusListener, IOnCreateS
                         // c.callback();
                         if (!isload) {
                             //获取栈顶点webview，加载指定页面
-                            //SDK.obtainAllIWebview().get(SDK.obtainAllIWebview().size() - 1).loadUrl(app.obtainWebviewBaseUrl() + "view/found.html");
+                            //  SDK.obtainAllIWebview().get(SDK.obtainAllIWebview().size() - 1).loadUrl(app.obtainWebviewBaseUrl() + "view/index.html");
                             isload = true;
                             //监听webview栈,如果有webview入栈，说明跳转至二级页面，隐藏底部导航栏.
-                            new Thread() {
-                                @Override
-                                public void run() {
-                                    super.run();
-                                    while (true) {
-                                        try {
-                                            sleep(200);
-                                        } catch (InterruptedException e) {
-                                            e.printStackTrace();
-                                        }
-                                        if (SDK.obtainAllIWebview().size() > 1) {
-                                            c.hidenag();
-                                        } else if (SDK.obtainAllIWebview().size() == 1) {
-                                            c.shownag();
-                                        }
-                                    }
-                                }
-                            }.start();
+
                         }
                         Log.d("LOAD", "onCallBack: ");
                         break;
@@ -198,11 +181,13 @@ public class WebappModeListener implements ICore.ICoreStatusListener, IOnCreateS
 
     @Override
     public void onCloseSplash() {
-      //  rootView.removeView(splashView);
+        //  rootView.removeView(splashView);
         if (pd != null) {
             pd.dismiss();
             pd = null;
         }
+        SDK.obtainAllIWebview().get(SDK.obtainAllIWebview().size() - 1).loadUrl(app.obtainWebviewBaseUrl() + "view/login.html");
         app.obtainWebAppRootView().obtainMainView().setVisibility(View.VISIBLE);
+        c.shownag();
     }
 }

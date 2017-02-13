@@ -60,7 +60,7 @@ function upload(type){
 				picc = t.responseText;
 				console.log(webRoot+t.responseText);
 				$(".shangchuan").attr('src',webRoot+t.responseText);
-				plus.storage.setItem(type,t.responseText)
+				plus.storage.setItem('type',t.responseText)
 //				console.log(type+" "+plus.storage.getItem('type'))
 //					plus.nativeUI.toast('处理完成' + t.responseText);
 			}else{
