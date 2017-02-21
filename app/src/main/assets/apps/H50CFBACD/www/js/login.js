@@ -1,4 +1,5 @@
 var jingdu = weidu = 0;
+alert(32);
 var auths = [];
 var map;
 document.addEventListener('plusready', function() {
@@ -41,7 +42,7 @@ document.addEventListener('plusready', function() {
 	};
 
 	$('#login').on('click', function() {
-	      // alert(32);
+	       alert(32);
 	//startActivity();
        console.log(1)
 			var phone = $('#phone').val();

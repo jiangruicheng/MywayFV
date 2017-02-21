@@ -4,6 +4,9 @@
             name="startActivity"
             value="com.cndll.myway.mywayfv.hbuilder.Ifeature.StartActivity"/>
         <feature
+            name="myway"
+            value="com.cndll.myway.mywayfv.hbuilder.Ifeature.StartActivity"/>
+        <feature
             name="Accelerometer"
             value="io.dcloud.feature.sensor.AccelerometerFeatureImpl"/>
 

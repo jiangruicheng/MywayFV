@@ -1,59 +1,59 @@
 <!doctype html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title>首页</title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link rel="stylesheet" href="../libs/mui/mui.css" />
-		<link rel="stylesheet" href="../libs/iconfont/fonts/iconfont.css"/>
-		<link rel="stylesheet" type="text/css" href="../css/chat.css">
-		<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
-		<script type="text/javascript" src="../js/mui.js" ></script>
-		<script type="text/javascript" src="../js/public.js"></script>
-		<script type="text/javascript" src="../js/appconf.js"></script>
-		<script type="text/javascript" src="../js/index.js"></script>
-		<style>
+<head>
+	<meta charset="UTF-8">
+	<title>首页</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link rel="stylesheet" href="../libs/mui/mui.css" />
+	<link rel="stylesheet" href="../libs/iconfont/fonts/iconfont.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/chat.css">
+	<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="../js/mui.js" ></script>
+	<script type="text/javascript" src="../js/public.js"></script>
+	<script type="text/javascript" src="../js/appconf.js"></script>
+	<script type="text/javascript" src="../js/index.js"></script>
+	<style>
 			.mui-bar{z-index: 9999;}
 			.mui-bar-tab .mui-tab-item.mui-active{color: #0062CC;}
 		</style>
-	</head>
- 
-	<body>
-		<nav class="mui-bar mui-bar-tab">
-			<a class="mui-tab-item" href="active.html">
-				<span class="mui-icon iconfont">&#xe600;</span>
-				<span class="mui-tab-label">动态</span>
-			</a>
-			<a class="mui-tab-item" href="found.html">
-				<span class="mui-icon iconfont">&#xe603;</span>
-				<span class="mui-tab-label">发现</span>
-			</a>
-			<a class="mui-tab-item mui-active" href="car.html">
-				<span class="mui-icon iconfont">&#xe607;</span>
-				<span class="mui-tab-label">车辆</span>
-			</a>
-			<a class="mui-tab-item" href="road.html">
-				<span class="mui-icon iconfont">&#xe601;</span>
-				<span class="mui-tab-label">路线</span>
-			</a>
-			<a class="mui-tab-item" href="my.html">
-				<span class="mui-icon iconfont">&#xe602;</span>
-				<span class="mui-tab-label">我的</span>
-			</a>
-		</nav>
-		<div id="allmap"></div>
-		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=B58QVrfpCwUPxY8h11UoWADPoUe2aPyY"></script>
-		<script src="../js/mui.min.js"></script>
-		<script src="../js/mui.js"></script>
-		<script src="../js/function.js"></script>
-		<script src="../js/open.js"></script>
-		<script src="../libs/jquery/jquery.js"></script>
-		<script type="text/javascript" charset="UTF-8">
+</head>
+
+<body>
+<nav class="mui-bar mui-bar-tab">
+	<a class="mui-tab-item mui-active" href="active.html">
+		<span class="mui-icon iconfont">&#xe600;</span>
+		<span class="mui-tab-label">动态</span>
+	</a>
+	<a class="mui-tab-item" href="found.html">
+		<span class="mui-icon iconfont">&#xe603;</span>
+		<span class="mui-tab-label">发现</span>
+	</a>
+	<a class="mui-tab-item" href="car.html">
+		<span class="mui-icon iconfont">&#xe607;</span>
+		<span class="mui-tab-label">车辆</span>
+	</a>
+	<a class="mui-tab-item" href="road.html">
+		<span class="mui-icon iconfont">&#xe601;</span>
+		<span class="mui-tab-label">路线</span>
+	</a>
+	<a class="mui-tab-item" href="my.html">
+		<span class="mui-icon iconfont">&#xe602;</span>
+		<span class="mui-tab-label">我的</span>
+	</a>
+</nav>
+<div id="allmap"></div>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=B58QVrfpCwUPxY8h11UoWADPoUe2aPyY"></script>
+<script src="../js/mui.min.js"></script>
+<script src="../js/mui.js"></script>
+<script src="../js/function.js"></script>
+<script src="../js/open.js"></script>
+<script src="../libs/jquery/jquery.js"></script>
+<script type="text/javascript" charset="UTF-8">
 		    //mui初始化
-			mui.init();  
+			mui.init();
 //			/*meMenu=1;*/
-			var subpages = ['car.html','found.html','active.html','road.html','my.html'];
+			var subpages = ['active.html','found.html','car.html','road.html','my.html'];
 			var subpage_style = {
 				top: '46px',
 				bottom: '51px',
@@ -88,6 +88,14 @@
 				if (targetTab == activeTab) {
 					return;
 				}
+
+               //显示 和 隐藏 原生VIEW
+               if (targetTab == 'car.html'){
+               window.plus.bridge.exec("myway", "showNativeView", []);
+               }else{
+               window.plus.bridge.exec("myway", "hideNativeView", []);
+               }
+
 				//更换标题
 				//显示目标选项卡
 				if (mui.os.ios || aniShow[targetTab]) {
@@ -101,10 +109,10 @@
 				//隐藏当前;
 				plus.webview.hide(activeTab);
 				//更改当前活跃的选项卡
-				activeTab = targetTab;			
+				activeTab = targetTab;
 			});
 			 //自定义事件，模拟点击“首页选项卡”
-			document.addEventListener('gohome', function() { 
+			document.addEventListener('gohome', function() {
 				var defaultTab = document.getElementById("defaultTab");
 				//模拟首页点击
 				mui.trigger(defaultTab, 'tap');
@@ -131,5 +139,5 @@
 				}
 			};
 		</script>
-	</body>
+</body>
 </html>
